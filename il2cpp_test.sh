@@ -13,4 +13,5 @@ echo "il2cpp compile-cpp"
 echo "patch CMakeLists"
 sed -i -r 's/\/Yupch\-(c|cpp)\.(h|hpp) \/Fp\\\".*\\\\[a-zA-Z0-9]+\.pch\\\"//g' ./output/CSharp/CMakeLists.txt
 
+cp -r clion/idea ./output/CSharp/.idea
 pause
