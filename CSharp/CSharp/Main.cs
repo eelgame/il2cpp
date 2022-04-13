@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using NUnitLite;
 
 namespace CSharp
 {
@@ -7,7 +7,7 @@ namespace CSharp
     {
         public static void Entry()
         {
-            Console.WriteLine("CSharp.Main.Entry Fix");
+            new AutoRun().Execute(Array.Empty<string>());
         }
     }
 }
