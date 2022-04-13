@@ -1,3 +1,5 @@
 /output
 /CSharp/packages
 .idea
+/CSharp/CSharp/obj
+/CSharp/CSharp/bin
