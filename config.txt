@@ -1,0 +1,6 @@
+Environment variables: CSHARP_DLL_PATH=C:\il2cpp\CSharp\CSharp\bin\Debug\CSharp.dll
+Working directory: C:\il2cpp\output\GameAssembly-CSharp-x64
+Program arguments: GameAssembly-CSharp-x64.dll,il2cpp_test il2cpp\CSharp\CSharp\bin\Debug\CSharp.dll
+Executable: C:\Windows\System32\rundll32.exe
+
+CMake options: -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=../../GameAssembly-CSharp-x64/
