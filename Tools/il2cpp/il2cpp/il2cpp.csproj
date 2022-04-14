@@ -12,6 +12,7 @@
     <PropertyGroup />
     <ItemGroup>
       <ProjectReference Include="..\Unity.IL2CPP.Building\Unity.IL2CPP.Building.csproj" />
+      <ProjectReference Include="..\Unity.IL2CPP\Unity.IL2CPP.csproj" />
     </ItemGroup>
     <ItemGroup>
         <Reference Include="MiniProfiler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -25,9 +26,6 @@
         </Reference>
         <Reference Include="Unity.IL2CPP.Common35">
             <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Unity.IL2CPP.Common35.dll</HintPath>
-        </Reference>
-        <Reference Include="Unity.IL2CPP">
-            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Unity.IL2CPP.dll</HintPath>
         </Reference>
         <Reference Include="MiniProfiler">
             <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\MiniProfiler.dll</HintPath>
