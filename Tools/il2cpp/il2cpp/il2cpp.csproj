@@ -37,4 +37,14 @@
             <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Mono.Cecil.dll</HintPath>
         </Reference>
     </ItemGroup>
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Copy SourceFiles="$(OutDir)\il2cpp.dll" DestinationFolder="..\..\..\il2cpp\build\deploy\netcoreapp3.1\" />
+        <Copy SourceFiles="$(OutDir)\il2cpp.pdb" DestinationFolder="..\..\..\il2cpp\build\deploy\netcoreapp3.1\" />
+
+        <Copy SourceFiles="$(OutDir)\Unity.IL2CPP.dll" DestinationFolder="..\..\..\il2cpp\build\deploy\netcoreapp3.1\" />
+        <Copy SourceFiles="$(OutDir)\Unity.IL2CPP.pdb" DestinationFolder="..\..\..\il2cpp\build\deploy\netcoreapp3.1\" />
+
+        <Copy SourceFiles="$(OutDir)\Unity.IL2CPP.Building.dll" DestinationFolder="..\..\..\il2cpp\build\deploy\netcoreapp3.1\" />
+        <Copy SourceFiles="$(OutDir)\Unity.IL2CPP.Building.pdb" DestinationFolder="..\..\..\il2cpp\build\deploy\netcoreapp3.1\" />
+    </Target>
 </Project>
