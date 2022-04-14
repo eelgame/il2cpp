@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <AssemblyName>Unity.IL2CPP</AssemblyName>
+        <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+    <PropertyGroup>
+        <LangVersion>7.3</LangVersion>
+        <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <PropertyGroup />
+    <ItemGroup />
+    <ItemGroup>
+        <Reference Include="Mono.Cecil">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Mono.Cecil.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.IL2CPP.Common35">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Unity.IL2CPP.Common35.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Cecil.Awesome">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Unity.Cecil.Awesome.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.IL2CPP.RuntimeServices">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Unity.IL2CPP.RuntimeServices.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.IL2CPP.Common">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Unity.IL2CPP.Common.dll</HintPath>
+        </Reference>
+        <Reference Include="MiniProfiler">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\MiniProfiler.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Cecil.Visitor">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Unity.Cecil.Visitor.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.IL2CPP.Shell">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Unity.IL2CPP.Shell.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil.Rocks">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Mono.Cecil.Rocks.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+</Project>
