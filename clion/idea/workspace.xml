@@ -66,7 +66,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameAssembly-CSharp-x64" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="GameAssembly-CSharp-x64.dll,il2cpp_test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$/../GameAssembly-CSharp-x64" PASS_PARENT_ENVS_2="true" PROJECT_NAME="il2cpp" TARGET_NAME="GameAssembly-CSharp-x64" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/../../../Windows/System32/rundll32.exe">
+    <configuration name="GameAssembly-CSharp-x64" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="GameAssembly-CSharp-x64.dll,il2cpp_test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$/../GameAssembly-CSharp-x64" PASS_PARENT_ENVS_2="true" PROJECT_NAME="il2cpp" TARGET_NAME="GameAssembly-CSharp-x64" CONFIG_NAME="Debug" RUN_PATH="C:/Windows/System32/rundll32.exe">
       <envs>
         <env name="CSHARP_DLL_PATH" value="$PROJECT_DIR$/../CSharp\..\..\CSharp\CSharp\bin\Debug\CSharp.dll" />
       </envs>
