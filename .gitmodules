@@ -1,6 +1,0 @@
-[submodule "il2cpp"]
-	path = il2cpp
-	url = http://gitlab.mgame.cn/root/il2cpp_huatuo.git
-[submodule "huatuo"]
-	path = huatuo
-	url = http://gitlab.mgame.cn/root/huatuo
