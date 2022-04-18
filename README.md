@@ -1,4 +1,14 @@
 # il2cpp
+## 目录结构
+1. CSharp 热更dll工程
+2. output/CSharp C++工程目录
+3. output/GameAssembly-CSharp-x64 生成的可执行文件目录
+
+## cmake
+1. output/CSharp/CMakeLists.txt CMakeLists文件，可以用clion或者vs打开，ToolChain选vs
+![image](https://user-images.githubusercontent.com/49626119/163772090-211a4553-bcb8-474d-90dc-31ffc4a2b064.png)
+
+
 ## 需要修改huatuo的地方
 1. 增加il2cpp::vm::MetadataCache::LoadAssemblyFromFile函数
 2. 增加il2cpp_test导出函数
