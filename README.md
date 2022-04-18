@@ -95,3 +95,7 @@ run_test.sh #构建并运行。执行CSharp.Main.Entry方法
 il2cpp_run_aot.sh #aot模式运行
 il2cpp_run.sh #huatuo模式运行
 ```
+## 注意事项
+1. CSharp是热更项目，build完成后CSharp.dll会自动拷贝到dll目录下，依赖dll请自行拷贝
+2. 热更dll同样会生成aot代码，所以不需要reftypes
+3. il2cpp_run_aot.sh/il2cpp_run.sh 可以在aot模式和huatuo模式下做对比测试
