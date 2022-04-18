@@ -3,6 +3,7 @@
 1. CSharp 热更dll工程
 2. output/CSharp C++工程目录
 3. output/GameAssembly-CSharp-x64 生成的可执行文件目录
+4. Tools/il2cpp il2cpp.exe源码
 
 ## cmake
 1. output/CSharp/CMakeLists.txt CMakeLists文件，可以用clion或者vs打开，Toolchains选vs
