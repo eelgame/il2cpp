@@ -1,5 +1,7 @@
 # il2cpp
 ## 需要修改huatuo的地方
+1. 增加il2cpp::vm::MetadataCache::LoadAssemblyFromFile函数
+2. 增加il2cpp_test导出函数
 ```
 // ==={{ huatuo
 #ifdef IL2CPP_TARGET_WINDOWS
@@ -39,6 +41,45 @@ int il2cpp_test()
 
 #endif
 // ===}} huatuo
+```
+
+3. 优先热更dll
+```
+const Il2CppAssembly* il2cpp::vm::MetadataCache::GetOrLoadAssemblyByName(const char* assemblyNameOrPath, bool tryLoad)
+{
+    const char* assemblyName = huatuo::GetAssemblyNameFromPath(assemblyNameOrPath);
+
+    il2cpp::utils::VmStringUtils::CaseInsensitiveComparer comparer;
+
+    il2cpp::os::FastAutoLock lock(&il2cpp::vm::g_MetadataLock);
+
+    for (auto assembly : s_cliAssemblies)
+    {
+        if (comparer(assembly->aname.name, assemblyName) || comparer(assembly->image->name, assemblyName))
+            return assembly;
+    }
+
+    for (int i = 0; i < s_AssembliesCount; i++)
+    {
+        const Il2CppAssembly* assembly = s_AssembliesTable + i;
+
+        if (comparer(assembly->aname.name, assemblyName) || comparer(assembly->image->name, assemblyName))
+            return assembly;
+    }
+
+    if (tryLoad)
+    {
+        Il2CppAssembly* newAssembly = huatuo::metadata::Assembly::LoadFromFile(assemblyNameOrPath);
+        if (newAssembly)
+        {
+            il2cpp::vm::Assembly::Register(newAssembly);
+            s_cliAssemblies.push_back(newAssembly);
+            return newAssembly;
+        }
+    }
+
+    return nullptr;
+}
 ```
 
 ```
