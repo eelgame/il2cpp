@@ -10,7 +10,7 @@
 ![image](https://user-images.githubusercontent.com/49626119/163772090-211a4553-bcb8-474d-90dc-31ffc4a2b064.png)
 
 ## vs调试
-1. 使用vs打开output\CSharp
+1. 使用vs打开output\CSharp，注意需要使用管理员权限打开vs，否则cmake构建会报错
 2. cp launch.vs.json output/CSharp/.vs/launch.vs.json
 3. 选择GameAssembly-CSharp-x64.dll
 ![image](https://user-images.githubusercontent.com/49626119/163795036-e79c8699-af1d-4eb2-9834-be5af4f02e43.png)
