@@ -1,0 +1,19 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+
+  "configurations": [
+    {
+      "env": {
+        "CSHARP_DLL_PATH": "../../CSharp/CSharp/bin/Debug/CSharp.dll"
+      },
+      "type": "dll",
+      "exe": "C:/Windows/System32/rundll32.exe",
+      "project": "CMakeLists.txt",
+      "args": [ "GameAssembly-CSharp-x64.dll,il2cpp_test" ],
+      "currentDir": "../GameAssembly-CSharp-x64",
+      "projectTarget": "GameAssembly-CSharp-x64.dll",
+      "name": "GameAssembly-CSharp-x64.dll"
+    }
+  ]
+}
