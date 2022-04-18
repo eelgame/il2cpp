@@ -5,7 +5,7 @@
 3. output/GameAssembly-CSharp-x64 生成的可执行文件目录
 
 ## cmake
-1. output/CSharp/CMakeLists.txt CMakeLists文件，可以用clion或者vs打开，ToolChain选vs
+1. output/CSharp/CMakeLists.txt CMakeLists文件，可以用clion或者vs打开，Toolchains选vs
 ![image](https://user-images.githubusercontent.com/49626119/163772090-211a4553-bcb8-474d-90dc-31ffc4a2b064.png)
 
 
