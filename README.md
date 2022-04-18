@@ -3,7 +3,7 @@
 ```
 git clone https://github.com/eelgame/il2cpp.git
 cd il2cpp
-cp -r $UNITY_PATH/2020.3.7f1/Editor/Data/il2cpp il2cpp/
+cp -r $UNITY_PATH/2020.3.7f1/Editor/Data/il2cpp ./
 ```
 ```
 热更dll路径：CSharp/CSharp/bin/Debug/CSharp.dll
