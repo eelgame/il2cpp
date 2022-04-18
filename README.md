@@ -9,6 +9,12 @@
 1. output/CSharp/CMakeLists.txt CMakeLists文件，可以用clion或者vs打开，Toolchains选vs
 ![image](https://user-images.githubusercontent.com/49626119/163772090-211a4553-bcb8-474d-90dc-31ffc4a2b064.png)
 
+## vs调试
+1. 使用vs打开output\CSharp
+2. cp launch.vs.json output/CSharp/.vs/launch.vs.json
+3. 选择GameAssembly-CSharp-x64.dll
+![image](https://user-images.githubusercontent.com/49626119/163795036-e79c8699-af1d-4eb2-9834-be5af4f02e43.png)
+
 
 ## 需要修改huatuo的地方
 1. 增加il2cpp::vm::MetadataCache::LoadAssemblyFromFile函数
