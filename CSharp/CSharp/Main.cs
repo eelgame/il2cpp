@@ -1,4 +1,5 @@
 ﻿using System;
+using CSharp_aot;
 using NUnitLite;
 
 namespace CSharp
@@ -7,6 +8,7 @@ namespace CSharp
     {
         public static void Entry()
         {
+            Console.WriteLine(typeof(RefTypes)); // 防止被裁剪
             var assembly = typeof(Main).Assembly;
 
             // var types = assembly.GetTypes();

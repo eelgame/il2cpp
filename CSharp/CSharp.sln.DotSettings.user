@@ -5,4 +5,5 @@
   &lt;Assembly Path="C:\il2cpp\CSharp\packages\xunit.abstractions.2.0.3\lib\net35\xunit.abstractions.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\il2cpp\CSharp\CSharp\bin\Debug\nunitlite.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
+	
 	</wpf:ResourceDictionary>

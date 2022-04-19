@@ -280,7 +280,6 @@
         <Compile Include="Graph\ShortestPath\TravellingSalesman.cs" />
         <Compile Include="Graph\Sort\DepthFirstTopSort.cs" />
         <Compile Include="Graph\Sort\KahnTopSort.cs" />
-        <Compile Include="Main.cs" />
         <Compile Include="Numerical\Exponentiation.cs" />
         <Compile Include="Numerical\PrimeGenerator.cs" />
         <Compile Include="Numerical\PrimeTester.cs" />
@@ -305,9 +304,17 @@
         <Compile Include="String\Search\KMP.cs" />
         <Compile Include="String\Search\RabinKarp.cs" />
         <Compile Include="String\Search\ZAlgorithm.cs" />
+
+        <Compile Include="Main.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\CSharp-aot\CSharp-aot.csproj">
+        <Project>{a284d90f-8a76-466e-b705-0e3b5be94797}</Project>
+        <Name>CSharp-aot</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -319,6 +326,7 @@
     -->
     <Target Name="AfterBuild">
         <Copy SourceFiles="$(OutDir)\CSharp.dll" DestinationFolder="..\..\dll\" />
+        <Copy SourceFiles="$(OutDir)\CSharp_aot.dll" DestinationFolder="..\..\dll\" />
     </Target>
     <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
       <PropertyGroup>
