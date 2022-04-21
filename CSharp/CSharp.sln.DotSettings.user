@@ -5,5 +5,11 @@
   &lt;Assembly Path="C:\il2cpp\CSharp\packages\xunit.abstractions.2.0.3\lib\net35\xunit.abstractions.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\il2cpp\CSharp\CSharp\bin\Debug\nunitlite.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=97149887_002Db1a6_002D465f_002D9b65_002D6c00e531f357/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;And&gt;&#xD;
+    &lt;Project Location="C:\il2cpp\CSharp\CSharp" Presentation="&amp;lt;CSharp&amp;gt;" /&gt;&#xD;
+    &lt;Namespace&gt;Advanced.Algorithms.Tests&lt;/Namespace&gt;&#xD;
+  &lt;/And&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	
 	</wpf:ResourceDictionary>
