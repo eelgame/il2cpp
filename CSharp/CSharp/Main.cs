@@ -24,8 +24,10 @@ namespace CSharp
             // }
             //
             // Console.WriteLine(assembly.FullName);
-
-            new AutoRun(assembly).Execute(Array.Empty<string>());
+            //
+            // new AutoRun(assembly).Execute(new []{"--test=Advanced.Algorithms.Tests.Binary"});
+            // new AutoRun(assembly).Execute(new []{"--test=Advanced.Algorithms.Tests.Combinatorics"});
+            new AutoRun(assembly).Execute(new []{"--test=Advanced.Algorithms.Tests.Compression"});
         }
     }
 }
