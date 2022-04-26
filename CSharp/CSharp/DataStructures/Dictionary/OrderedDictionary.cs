@@ -203,7 +203,7 @@ namespace Advanced.Algorithms.DataStructures.Foundation
         }
     }
 
-    internal struct OrderedKeyValuePair<K, V> : IComparable
+    internal class OrderedKeyValuePair<K, V> : IComparable
                                  where K : IComparable
     {
         internal K Key { get; }
