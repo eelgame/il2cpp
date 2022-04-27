@@ -7,7 +7,7 @@ namespace Advanced.Algorithms.Tests.Graph
     public class HopcroftKarp_Tests
     {
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void HopcroftKarp_AdjacencyListGraph_Smoke_Test()
         {
 
@@ -38,11 +38,11 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.GetMaxBiPartiteMatching(graph);
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 4);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 4);
 
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void HopcroftKarp_AdjacencyMatrixGraph_Smoke_Test()
         {
 
@@ -73,11 +73,11 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.GetMaxBiPartiteMatching(graph);
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 4);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 4);
 
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void HopcroftKarp_AdjacencyListGraph_Accurancy_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.Graph<char>();
@@ -118,12 +118,12 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.GetMaxBiPartiteMatching(graph);
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 6);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 6);
 
         }
 
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void HopcroftKarp_AdjacencyListGraph_Accurancy_Test_Fully_Connected_Bipartite_Graph()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.Graph<char>();
@@ -149,7 +149,7 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.GetMaxBiPartiteMatching(graph);
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 3);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 3);
 
         }
     }

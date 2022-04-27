@@ -9,7 +9,7 @@ namespace Advanced.Algorithms.Tests.Graph
         /// <summary>
         /// Test Max BiParitite Edges using Ford-Fukerson algorithm
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void MaxBiPartiteMatch_AdjacencyListGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.Graph<char>();
@@ -39,13 +39,13 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.GetMaxBiPartiteMatching(graph);
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 4);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 4);
         }
 
         /// <summary>
         /// Test Max BiParitite Edges using Ford-Fukerson algorithm
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void MaxBiPartiteMatch_AdjacencyListGraph_Accuracy_Test_1()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.Graph<char>();
@@ -64,10 +64,10 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.GetMaxBiPartiteMatching(graph);
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 2);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 2);
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void MaxBiPartiteMatch_AdjacencyMatrixGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.Graph<char>();
@@ -97,13 +97,13 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.GetMaxBiPartiteMatching(graph);
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 4);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 4);
         }
 
         /// <summary>
         /// Test Max BiParitite Edges using Ford-Fukerson algorithm
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void MaxBiPartiteMatch_AdjacencyMatrixGraph_Accuracy_Test_1()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.Graph<char>();
@@ -122,11 +122,11 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.GetMaxBiPartiteMatching(graph);
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 2);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 2);
         }
 
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void MaxBiPartiteMatch_AdjacencyListGraph_Accurancy_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.Graph<char>();
@@ -167,11 +167,11 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.GetMaxBiPartiteMatching(graph);
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 6);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 6);
 
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void MaxBiPartiteMatch_AdjacencyListGraph_Accurancy_Test_Fully_Connected_Bipartite_Graph()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.Graph<char>();
@@ -197,7 +197,7 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.GetMaxBiPartiteMatching(graph);
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 3);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 3);
 
         }
 

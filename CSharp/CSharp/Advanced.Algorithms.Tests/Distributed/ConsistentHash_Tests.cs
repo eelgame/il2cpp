@@ -8,7 +8,7 @@ namespace Advanced.Algorithms.Tests
     public class ConsistentHash_Tests
     {
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void ConsistantHash_Smoke_Test()
         {
             var hash = new ConsistentHash<int>();
@@ -29,12 +29,12 @@ namespace Advanced.Algorithms.Tests
             var rnd = new Random();
             for (int i = 0; i < 1000; i++)
             {
-                NUnit.Framework.Assert.AreNotEqual(15, hash.GetNode(rnd.Next().ToString()));
-                NUnit.Framework.Assert.AreNotEqual(25, hash.GetNode(rnd.Next().ToString()));
-                NUnit.Framework.Assert.AreNotEqual(172, hash.GetNode(rnd.Next().ToString()));
+                HuaTuo.NUnit.Framework.Assert.AreNotEqual(15, hash.GetNode(rnd.Next().ToString()));
+                HuaTuo.NUnit.Framework.Assert.AreNotEqual(25, hash.GetNode(rnd.Next().ToString()));
+                HuaTuo.NUnit.Framework.Assert.AreNotEqual(172, hash.GetNode(rnd.Next().ToString()));
 
                 var t = hash.GetNode(rnd.Next().ToString());
-                NUnit.Framework.Assert.IsTrue(t >= 200 && t < 300);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(t >= 200 && t < 300);
             }
 
         }

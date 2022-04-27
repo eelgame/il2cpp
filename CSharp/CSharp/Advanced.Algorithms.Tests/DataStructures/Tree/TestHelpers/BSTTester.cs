@@ -31,7 +31,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
 
             var count = VerifyCount(node.Left) + VerifyCount(node.Right) + 1;
 
-            NUnit.Framework.Assert.AreEqual(count, node.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(count, node.Count);
 
             return count;
         }

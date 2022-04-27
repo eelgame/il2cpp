@@ -6,7 +6,7 @@ namespace Advanced.Algorithms.Tests.Graph
     
     public class MColoring_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void MColoring_AdjacencyListGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.Graph<int>();
@@ -26,10 +26,10 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.Color(graph, new string[] { "red", "green", "blue" });
 
-            NUnit.Framework.Assert.IsTrue(result.CanColor);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(result.CanColor);
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void MColoring_AdjacencyMatrixGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.Graph<int>();
@@ -49,7 +49,7 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.Color(graph, new string[] { "red", "green", "blue" });
 
-            NUnit.Framework.Assert.IsTrue(result.CanColor);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(result.CanColor);
         }
     }
 }

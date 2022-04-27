@@ -10,7 +10,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
         /// <summary>
         /// Smoke test
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void FenwickTree_Sum_Smoke_Test()
         {
             var testArray = new int[] { 1, 3, 5, 7, 9, 11 };
@@ -21,7 +21,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
 
             var sum = tree.PrefixSum(3);
 
-            NUnit.Framework.Assert.AreEqual(16, sum);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(16, sum);
         }
     }
 }

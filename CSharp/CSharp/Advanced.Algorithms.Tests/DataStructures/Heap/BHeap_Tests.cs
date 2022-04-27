@@ -11,7 +11,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
     public class BHeap_Tests
     {
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void Min_BHeap_Test()
         {
             var rnd = new Random();
@@ -27,11 +27,11 @@ namespace Advanced.Algorithms.Tests.DataStructures
             for (int i = 0; i <= 99; i++)
             {
                 var min = minHeap.Extract();
-                NUnit.Framework.Assert.AreEqual(min, i);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(min, i);
             }
 
             //IEnumerable tests.
-            NUnit.Framework.Assert.AreEqual(minHeap.Count, minHeap.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(minHeap.Count, minHeap.Count());
 
             var testSeries = Enumerable.Range(1, 49).OrderBy(x => rnd.Next()).ToList();
 
@@ -43,16 +43,16 @@ namespace Advanced.Algorithms.Tests.DataStructures
             for (int i = 1; i <= 49; i++)
             {
                 var min = minHeap.Extract();
-                NUnit.Framework.Assert.AreEqual(min, i);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(min, i);
             }
 
             //IEnumerable tests.
-            NUnit.Framework.Assert.AreEqual(minHeap.Count, minHeap.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(minHeap.Count, minHeap.Count());
 
         }
 
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void Max_BHeap_Test()
         {
             var rnd = new Random();
@@ -71,11 +71,11 @@ namespace Advanced.Algorithms.Tests.DataStructures
             for (int i = 0; i <= 99; i++)
             {
                 var max = maxHeap.Extract();
-                NUnit.Framework.Assert.AreEqual(max, 99 - i);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(max, 99 - i);
             }
 
             //IEnumerable tests.
-            NUnit.Framework.Assert.AreEqual(maxHeap.Count, maxHeap.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(maxHeap.Count, maxHeap.Count());
 
             var testSeries = Enumerable.Range(1, 49)
                 .OrderBy(x => rnd.Next()).ToList();
@@ -88,11 +88,11 @@ namespace Advanced.Algorithms.Tests.DataStructures
             for (int i = 1; i <= 49; i++)
             {
                 var max = maxHeap.Extract();
-                NUnit.Framework.Assert.AreEqual(max, 49 - i + 1);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(max, 49 - i + 1);
             }
 
             //IEnumerable tests.
-            NUnit.Framework.Assert.AreEqual(maxHeap.Count, maxHeap.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(maxHeap.Count, maxHeap.Count());
 
         }
     }

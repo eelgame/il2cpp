@@ -7,7 +7,7 @@ namespace Advanced.Algorithms.Tests.Geometry
     
     public class RectangleIntersection_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void RectIntersection_Smoke_Test()
         {
             var rectangleComparer = new RectangleComparer();
@@ -23,7 +23,7 @@ namespace Advanced.Algorithms.Tests.Geometry
                 RightBottom = new Point(15, 0)
             });
 
-            NUnit.Framework.Assert.IsTrue(rectangleComparer.Equals(result, new Rectangle()
+            HuaTuo.NUnit.Framework.Assert.IsTrue(rectangleComparer.Equals(result, new Rectangle()
             {
                 LeftTop = new Point(5, 5),
                 RightBottom = new Point(10, 0)
@@ -40,7 +40,7 @@ namespace Advanced.Algorithms.Tests.Geometry
                 RightBottom = new Point(15, 0)
             });
 
-            NUnit.Framework.Assert.IsTrue(rectangleComparer.Equals(result, null));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(rectangleComparer.Equals(result, null));
         }
 
     }

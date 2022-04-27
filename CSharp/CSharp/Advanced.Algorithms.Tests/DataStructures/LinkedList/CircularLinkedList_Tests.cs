@@ -10,7 +10,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
         /// <summary>
         /// doubly linked list tests 
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void CircularLinkedList_Test()
         {
             var list = new CircularLinkedList<string>();
@@ -20,50 +20,50 @@ namespace Advanced.Algorithms.Tests.DataStructures
             list.Insert("c");
             list.Insert("c");
 
-            NUnit.Framework.Assert.AreEqual(list.Count(), 4);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(list.Count(), 4);
 
             list.Delete("a");
-            NUnit.Framework.Assert.AreEqual(list.Count(), 3);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(list.Count(), 3);
 
             list.Delete("b");
-            NUnit.Framework.Assert.AreEqual(list.Count(), 2);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(list.Count(), 2);
 
             list.Delete("c");
-            NUnit.Framework.Assert.AreEqual(list.Count(), 1);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(list.Count(), 1);
 
             list.Insert("a");
-            NUnit.Framework.Assert.AreEqual(list.Count(), 2);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(list.Count(), 2);
 
             list.Delete("a");
-            NUnit.Framework.Assert.AreEqual(list.Count(), 1);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(list.Count(), 1);
 
             list.Delete("c");
-            NUnit.Framework.Assert.AreEqual(list.Count(), 0);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(list.Count(), 0);
 
             list.Insert("a");
             list.Insert("b");
             list.Insert("c");
             list.Insert("c");
 
-            NUnit.Framework.Assert.AreEqual(list.Count(), 4);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(list.Count(), 4);
 
             list.Delete("a");
-            NUnit.Framework.Assert.AreEqual(list.Count(), 3);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(list.Count(), 3);
 
             list.Delete("b");
-            NUnit.Framework.Assert.AreEqual(list.Count(), 2);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(list.Count(), 2);
 
             list.Delete("c");
-            NUnit.Framework.Assert.AreEqual(list.Count(), 1);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(list.Count(), 1);
 
             list.Insert("a");
-            NUnit.Framework.Assert.AreEqual(list.Count(), 2);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(list.Count(), 2);
 
             list.Delete("a");
-            NUnit.Framework.Assert.AreEqual(list.Count(), 1);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(list.Count(), 1);
 
             list.Delete("c");
-            NUnit.Framework.Assert.AreEqual(list.Count(), 0);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(list.Count(), 0);
         }
     }
 }

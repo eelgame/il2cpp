@@ -16,37 +16,37 @@ namespace Advanced.Algorithms.Tests.Combinatorics
         static readonly Func<int, int, int> combination = (int n, int r)
             => n == 0 || r == 0 ? 0 : factorial(n) / (factorial(r) * factorial(n - r));
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void Combination_Without_Repetitions_Smoke_Test()
         {
             var input = "".ToCharArray().ToList();
             var combinations = Combination.Find<char>(input, 2, false);
-            NUnit.Framework.Assert.AreEqual(combination(input.Count, 2), combinations.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(combination(input.Count, 2), combinations.Count);
 
             input = "cookie".ToCharArray().ToList();
             combinations = Combination.Find<char>(input, 3, false);
-            NUnit.Framework.Assert.AreEqual(combination(input.Count, 3), combinations.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(combination(input.Count, 3), combinations.Count);
 
             input = "monster".ToCharArray().ToList();
             combinations = Combination.Find<char>(input, 4, false);
-            NUnit.Framework.Assert.AreEqual(combination(input.Count, 4), combinations.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(combination(input.Count, 4), combinations.Count);
         }
 
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void Combination_With_Repetitions_Smoke_Test()
         {
             var input = "".ToCharArray().ToList();
             var combinations = Combination.Find<char>(input, 3, true);
-            NUnit.Framework.Assert.AreEqual(0, combinations.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(0, combinations.Count);
 
             input = "pen".ToCharArray().ToList();
             combinations = Combination.Find<char>(input, 2, true);
-            NUnit.Framework.Assert.AreEqual(combination(input.Count + 2 - 1, 2), combinations.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(combination(input.Count + 2 - 1, 2), combinations.Count);
 
             input = "scan".ToCharArray().ToList();
             combinations = Combination.Find<char>(input, 3, true);
-            NUnit.Framework.Assert.AreEqual(combination(input.Count + 3 - 1, 3), combinations.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(combination(input.Count + 3 - 1, 3), combinations.Count);
         }
 
     }

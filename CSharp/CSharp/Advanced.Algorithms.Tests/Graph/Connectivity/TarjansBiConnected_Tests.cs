@@ -7,7 +7,7 @@ namespace Advanced.Algorithms.Tests.Graph
     
     public class TarjansBiConnected_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void TarjanIsBiConnected_AdjacencyListGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.Graph<char>();
@@ -24,7 +24,7 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.IsBiConnected(graph);
 
-            NUnit.Framework.Assert.IsTrue(result);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(result);
 
             graph.AddVertex('D');
             graph.AddVertex('E');
@@ -43,11 +43,11 @@ namespace Advanced.Algorithms.Tests.Graph
 
             result = algorithm.IsBiConnected(graph);
 
-            NUnit.Framework.Assert.IsFalse(result);
+            HuaTuo.NUnit.Framework.Assert.IsFalse(result);
 
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void TarjanIsBiConnected_AdjacencyMatrixGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.Graph<char>();
@@ -64,7 +64,7 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.IsBiConnected(graph);
 
-            NUnit.Framework.Assert.IsTrue(result);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(result);
 
             graph.AddVertex('D');
             graph.AddVertex('E');
@@ -83,7 +83,7 @@ namespace Advanced.Algorithms.Tests.Graph
 
             result = algorithm.IsBiConnected(graph);
 
-            NUnit.Framework.Assert.IsFalse(result);
+            HuaTuo.NUnit.Framework.Assert.IsFalse(result);
 
         }
     }

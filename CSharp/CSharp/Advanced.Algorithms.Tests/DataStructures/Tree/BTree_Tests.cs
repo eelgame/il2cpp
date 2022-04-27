@@ -9,7 +9,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
     public class BTree_Tests
     {
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BTree_Smoke_Test()
         {
             //insert test
@@ -30,7 +30,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
             tree.Insert(8);
 
             //IEnumerable test using linq count()
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
             ////delete
             tree.Delete(2);
@@ -47,12 +47,12 @@ namespace Advanced.Algorithms.Tests.DataStructures
             tree.Delete(13);
             tree.Delete(12);
 
-            NUnit.Framework.Assert.AreEqual(tree.Count, 0);
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, 0);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BTree_AccuracyTest()
         {
 
@@ -74,29 +74,29 @@ namespace Advanced.Algorithms.Tests.DataStructures
                 var actualMaxHeight = BTreeTester.GetMaxHeight(tree.Root);
                 var actualMinHeight = BTreeTester.GetMinHeight(tree.Root);
 
-                NUnit.Framework.Assert.IsTrue(actualMaxHeight == actualMinHeight);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(actualMaxHeight == actualMinHeight);
 
                 //https://en.wikipedia.org/wiki/B-tree#Best_case_and_worst_case_heights
                 var theoreticalMaxHeight = Math.Ceiling(Math.Log((i + 2) / 2, (int)Math.Ceiling((double)order / 2)));
 
-                NUnit.Framework.Assert.IsTrue(actualMaxHeight <= theoreticalMaxHeight);
-                NUnit.Framework.Assert.IsTrue(tree.Count == i + 1);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(actualMaxHeight <= theoreticalMaxHeight);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == i + 1);
 
-                NUnit.Framework.Assert.IsTrue(tree.HasItem(randomNumbers[i]));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.HasItem(randomNumbers[i]));
                 //IEnumerable test using linq count()
-                NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+                HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
             }
 
             for (int i = 0; i < nodeCount; i++)
             {
-                NUnit.Framework.Assert.IsTrue(tree.HasItem(randomNumbers[i]));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.HasItem(randomNumbers[i]));
             }
 
             //IEnumerable test using linq count()
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
-            NUnit.Framework.Assert.AreEqual(tree.Max, randomNumbers.Max());
-            NUnit.Framework.Assert.AreEqual(tree.Min, randomNumbers.Min());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Max, randomNumbers.Max());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Min, randomNumbers.Min());
 
             //shuffle again before deletion tests
             randomNumbers = Enumerable.Range(1, nodeCount)
@@ -106,29 +106,29 @@ namespace Advanced.Algorithms.Tests.DataStructures
             for (int i = 0; i < nodeCount; i++)
             {
                 tree.Delete(randomNumbers[i]);
-                NUnit.Framework.Assert.IsFalse(tree.HasItem(randomNumbers[i]));
+                HuaTuo.NUnit.Framework.Assert.IsFalse(tree.HasItem(randomNumbers[i]));
 
                 var actualMaxHeight = BTreeTester.GetMaxHeight(tree.Root);
                 var actualMinHeight = BTreeTester.GetMinHeight(tree.Root);
 
-                NUnit.Framework.Assert.IsTrue(actualMaxHeight == actualMinHeight);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(actualMaxHeight == actualMinHeight);
 
                 //https://en.wikipedia.org/wiki/B-tree#Best_case_and_worst_case_heights
                 var theoreticalMaxHeight = Math.Ceiling(Math.Log((nodeCount - i + 2) / 2, (int)Math.Ceiling((double)order / 2)));
 
-                NUnit.Framework.Assert.IsTrue(actualMaxHeight <= theoreticalMaxHeight);
-                NUnit.Framework.Assert.IsTrue(tree.Count == nodeCount - 1 - i);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(actualMaxHeight <= theoreticalMaxHeight);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == nodeCount - 1 - i);
                 //IEnumerable test using linq count()
-                NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+                HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
             }
 
-            NUnit.Framework.Assert.IsTrue(tree.Count == 0);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == 0);
             //IEnumerable test using linq count()
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
         }
 
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BTree_StressTest()
         {
 
@@ -144,7 +144,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
             for (int i = 0; i < nodeCount; i++)
             {
                 tree.Insert(randomNumbers[i]);
-                NUnit.Framework.Assert.IsTrue(tree.Count == i + 1);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == i + 1);
 
             }
 
@@ -157,11 +157,11 @@ namespace Advanced.Algorithms.Tests.DataStructures
             for (int i = 0; i < nodeCount; i++)
             {
                 tree.Delete(randomNumbers[i]);
-                NUnit.Framework.Assert.IsTrue(tree.Count == nodeCount - 1 - i);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == nodeCount - 1 - i);
             }
 
 
-            NUnit.Framework.Assert.IsTrue(tree.Count == 0);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == 0);
 
         }
     }

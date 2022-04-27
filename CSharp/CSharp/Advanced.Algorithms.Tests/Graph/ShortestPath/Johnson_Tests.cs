@@ -7,7 +7,7 @@ namespace Advanced.Algorithms.Tests.Graph
     
     public class Johnsons_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void Johnsons_AdjacencyListGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.WeightedDiGraph<char, int>();
@@ -38,18 +38,18 @@ namespace Advanced.Algorithms.Tests.Graph
             var result = algorithm.FindAllPairShortestPaths(graph);
 
             var testCase = result.First(x => x.Source == 'S' && x.Destination == 'T');
-            NUnit.Framework.Assert.AreEqual(2, testCase.Distance);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(2, testCase.Distance);
 
             var expectedPath = new char[] { 'S', 'A', 'C', 'D', 'B', 'T' };
             for (int i = 0; i < expectedPath.Length; i++)
             {
-                NUnit.Framework.Assert.AreEqual(expectedPath[i], testCase.Path[i]);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(expectedPath[i], testCase.Path[i]);
             }
 
         }
 
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void Johnsons_AdjacencyMatrixGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.WeightedDiGraph<char, int>();
@@ -80,12 +80,12 @@ namespace Advanced.Algorithms.Tests.Graph
             var result = algorithm.FindAllPairShortestPaths(graph);
 
             var testCase = result.First(x => x.Source == 'S' && x.Destination == 'T');
-            NUnit.Framework.Assert.AreEqual(2, testCase.Distance);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(2, testCase.Distance);
 
             var expectedPath = new char[] { 'S', 'A', 'C', 'D', 'B', 'T' };
             for (int i = 0; i < expectedPath.Length; i++)
             {
-                NUnit.Framework.Assert.AreEqual(expectedPath[i], testCase.Path[i]);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(expectedPath[i], testCase.Path[i]);
             }
 
         }

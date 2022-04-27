@@ -43,13 +43,11 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="nunit.framework, Version=3.13.3.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
-          <HintPath>..\packages\NUnit.3.13.3\lib\net45\nunit.framework.dll</HintPath>
-          <Private>True</Private>
+        <Reference Include="huatuo.nunit.framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
+          <HintPath>..\nunit\huatuo.nunit.framework.dll</HintPath>
         </Reference>
-        <Reference Include="nunitlite, Version=3.13.3.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
-          <HintPath>..\packages\NUnitLite.3.13.3\lib\net45\nunitlite.dll</HintPath>
-          <Private>True</Private>
+        <Reference Include="huatuo.nunitlite, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
+          <HintPath>..\nunit\huatuo.nunitlite.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
@@ -336,13 +334,14 @@
     </Target>
     -->
     <Target Name="AfterBuild">
-        <Copy SourceFiles="$(OutDir)\CSharp.dll" DestinationFolder="..\..\dll\" />
-        <Copy SourceFiles="$(OutDir)\CSharp_aot.dll" DestinationFolder="..\..\dll\" />
+        <ItemGroup>
+            <_CopyItems Include="$(OutDir)\*.*" />
+        </ItemGroup>
+        <Copy SourceFiles="@(_CopyItems)" DestinationFolder="..\..\dll\" />
     </Target>
     <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
       <PropertyGroup>
         <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
       </PropertyGroup>
-      <Error Condition="!Exists('..\packages\NUnit.3.13.3\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.13.3\build\NUnit.props'))" />
     </Target>
 </Project>

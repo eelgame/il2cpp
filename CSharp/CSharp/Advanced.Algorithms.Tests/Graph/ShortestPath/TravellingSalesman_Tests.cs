@@ -10,7 +10,7 @@ namespace Advanced.Algorithms.Tests.Graph
     
     public class TravellingSalesman_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void TravellingSalesman_AdjacencyListGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.WeightedDiGraph<int, int>();
@@ -37,10 +37,10 @@ namespace Advanced.Algorithms.Tests.Graph
             graph.AddEdge(3, 2, 8);
 
             var tsp = new TravellingSalesman<int, int>();
-            NUnit.Framework.Assert.AreEqual(21, tsp.FindMinWeight(graph, new TSPShortestPathOperators()));
+            HuaTuo.NUnit.Framework.Assert.AreEqual(21, tsp.FindMinWeight(graph, new TSPShortestPathOperators()));
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void TravellingSalesman_AdjacencyMatrixGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.WeightedDiGraph<int, int>();
@@ -67,7 +67,7 @@ namespace Advanced.Algorithms.Tests.Graph
             graph.AddEdge(3, 2, 8);
 
             var tsp = new TravellingSalesman<int, int>();
-            NUnit.Framework.Assert.AreEqual(21, tsp.FindMinWeight(graph, new TSPShortestPathOperators()));
+            HuaTuo.NUnit.Framework.Assert.AreEqual(21, tsp.FindMinWeight(graph, new TSPShortestPathOperators()));
         }
     }
 

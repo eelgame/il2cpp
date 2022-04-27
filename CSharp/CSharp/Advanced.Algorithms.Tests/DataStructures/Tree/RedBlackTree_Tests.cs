@@ -11,13 +11,13 @@ namespace Advanced.Algorithms.Tests.DataStructures
         /// <summary>
         ///  Smoke test
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void RedBlackTree_Smoke_Test()
         {
             //insert test
             var tree = new RedBlackTree<int>();
 
-            NUnit.Framework.Assert.AreEqual(-1, tree.Root.GetHeight());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(-1, tree.Root.GetHeight());
 
             tree.Insert(1);
             tree.Insert(2);
@@ -31,11 +31,11 @@ namespace Advanced.Algorithms.Tests.DataStructures
             tree.Insert(10);
             tree.Insert(11);
 
-            NUnit.Framework.Assert.AreEqual(11, tree.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(11, tree.Count);
 
             //IEnumerable test using linq
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.AsEnumerableDesc().Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.AsEnumerableDesc().Count());
 
             //delete
             tree.Delete(1);
@@ -50,10 +50,10 @@ namespace Advanced.Algorithms.Tests.DataStructures
             tree.Delete(10);
             tree.Delete(11);
 
-            NUnit.Framework.Assert.AreEqual(0, tree.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(0, tree.Count);
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void RedBlackTree_Accuracy_Test()
         {
             var nodeCount = 1000;
@@ -69,23 +69,23 @@ namespace Advanced.Algorithms.Tests.DataStructures
             for (int i = 0; i < nodeCount; i++)
             {
                 var index = tree.Insert(randomNumbers[i]);
-                NUnit.Framework.Assert.AreEqual(index, tree.IndexOf(randomNumbers[i]));
-                NUnit.Framework.Assert.IsTrue(tree.HasItem(randomNumbers[i]));
-                NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
+                HuaTuo.NUnit.Framework.Assert.AreEqual(index, tree.IndexOf(randomNumbers[i]));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.HasItem(randomNumbers[i]));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
                 tree.Root.VerifyCount();
                 var actualHeight = tree.Root.GetHeight();
 
                 //http://doctrina.org/maximum-height-of-red-black-tree.html
                 var maxHeight = 2 * Math.Log(nodeCount + 1, 2);
 
-                NUnit.Framework.Assert.IsTrue(actualHeight < maxHeight);
-                NUnit.Framework.Assert.IsTrue(tree.Count == i + 1);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(actualHeight < maxHeight);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == i + 1);
             }
 
             for (int i = 0; i < sorted.Count; i++)
             {
-                NUnit.Framework.Assert.AreEqual(sorted[i], tree.ElementAt(i));
-                NUnit.Framework.Assert.AreEqual(i, tree.IndexOf(sorted[i]));
+                HuaTuo.NUnit.Framework.Assert.AreEqual(sorted[i], tree.ElementAt(i));
+                HuaTuo.NUnit.Framework.Assert.AreEqual(i, tree.IndexOf(sorted[i]));
             }
 
             //shuffle again before deletion tests
@@ -94,38 +94,38 @@ namespace Advanced.Algorithms.Tests.DataStructures
                                    .ToList();
 
             //IEnumerable test using linq
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.AsEnumerableDesc().Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.AsEnumerableDesc().Count());
 
             for (int i = 0; i < nodeCount; i++)
             {
                 if (rnd.NextDouble() >= 0.5)
                 {
                     var index = tree.IndexOf(randomNumbers[i]);
-                    NUnit.Framework.Assert.AreEqual(index, tree.Delete(randomNumbers[i]));
+                    HuaTuo.NUnit.Framework.Assert.AreEqual(index, tree.Delete(randomNumbers[i]));
                 }
                 else
                 {
                     var index = tree.IndexOf(randomNumbers[i]);
-                    NUnit.Framework.Assert.AreEqual(tree.ElementAt(index), randomNumbers[i]);
+                    HuaTuo.NUnit.Framework.Assert.AreEqual(tree.ElementAt(index), randomNumbers[i]);
                     tree.RemoveAt(index);
                 }
 
-                NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
                 tree.Root.VerifyCount();
                 var actualHeight = tree.Root.GetHeight();
 
                 //http://doctrina.org/maximum-height-of-red-black-tree.html
                 var maxHeight = 2 * Math.Log(nodeCount + 1, 2);
 
-                NUnit.Framework.Assert.IsTrue(actualHeight < maxHeight);
-                NUnit.Framework.Assert.IsTrue(tree.Count == nodeCount - 1 - i);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(actualHeight < maxHeight);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == nodeCount - 1 - i);
             }
 
-            NUnit.Framework.Assert.IsTrue(tree.Count == 0);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == 0);
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void RedBlack_Accuracy_Test_With_Node_LookUp()
         {
             var nodeCount = 1000;
@@ -141,23 +141,23 @@ namespace Advanced.Algorithms.Tests.DataStructures
             for (int i = 0; i < nodeCount; i++)
             {
                 var index = tree.Insert(randomNumbers[i]);
-                NUnit.Framework.Assert.AreEqual(index, tree.IndexOf(randomNumbers[i]));
-                NUnit.Framework.Assert.IsTrue(tree.HasItem(randomNumbers[i]));
-                NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
+                HuaTuo.NUnit.Framework.Assert.AreEqual(index, tree.IndexOf(randomNumbers[i]));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.HasItem(randomNumbers[i]));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
                 tree.Root.VerifyCount();
                 var actualHeight = tree.Root.GetHeight();
 
                 //http://doctrina.org/maximum-height-of-red-black-tree.html
                 var maxHeight = 2 * Math.Log(nodeCount + 1, 2);
 
-                NUnit.Framework.Assert.IsTrue(actualHeight < maxHeight);
-                NUnit.Framework.Assert.IsTrue(tree.Count == i + 1);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(actualHeight < maxHeight);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == i + 1);
             }
 
             for (int i = 0; i < sorted.Count; i++)
             {
-                NUnit.Framework.Assert.AreEqual(sorted[i], tree.ElementAt(i));
-                NUnit.Framework.Assert.AreEqual(i, tree.IndexOf(sorted[i]));
+                HuaTuo.NUnit.Framework.Assert.AreEqual(sorted[i], tree.ElementAt(i));
+                HuaTuo.NUnit.Framework.Assert.AreEqual(i, tree.IndexOf(sorted[i]));
             }
 
             //shuffle again before deletion tests
@@ -166,38 +166,38 @@ namespace Advanced.Algorithms.Tests.DataStructures
                                    .ToList();
 
             //IEnumerable test using linq
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.AsEnumerableDesc().Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.AsEnumerableDesc().Count());
 
             for (int i = 0; i < nodeCount; i++)
             {
                 if (rnd.NextDouble() >= 0.5)
                 {
                     var index = tree.IndexOf(randomNumbers[i]);
-                    NUnit.Framework.Assert.AreEqual(index, tree.Delete(randomNumbers[i]));
+                    HuaTuo.NUnit.Framework.Assert.AreEqual(index, tree.Delete(randomNumbers[i]));
                 }
                 else
                 {
                     var index = tree.IndexOf(randomNumbers[i]);
-                    NUnit.Framework.Assert.AreEqual(tree.ElementAt(index), randomNumbers[i]);
+                    HuaTuo.NUnit.Framework.Assert.AreEqual(tree.ElementAt(index), randomNumbers[i]);
                     tree.RemoveAt(index);
                 }
 
-                NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
                 tree.Root.VerifyCount();
                 var actualHeight = tree.Root.GetHeight();
 
                 //http://doctrina.org/maximum-height-of-red-black-tree.html
                 var maxHeight = 2 * Math.Log(nodeCount + 1, 2);
 
-                NUnit.Framework.Assert.IsTrue(actualHeight < maxHeight);
-                NUnit.Framework.Assert.IsTrue(tree.Count == nodeCount - 1 - i);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(actualHeight < maxHeight);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == nodeCount - 1 - i);
             }
 
-            NUnit.Framework.Assert.IsTrue(tree.Count == 0);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == 0);
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void RedBlackTree_BulkInit_Test()
         {
             var nodeCount = 1000;
@@ -207,11 +207,11 @@ namespace Advanced.Algorithms.Tests.DataStructures
 
             var tree = new RedBlackTree<int>(sortedNumbers);
 
-            NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
 
             //IEnumerable test using linq
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.AsEnumerableDesc().Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.AsEnumerableDesc().Count());
 
             tree.Root.VerifyCount();
 
@@ -220,22 +220,22 @@ namespace Advanced.Algorithms.Tests.DataStructures
                 tree.Delete(sortedNumbers[i]);
 
                 tree.Root.VerifyCount();
-                NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
 
                 var actualHeight = tree.Root.GetHeight();
 
                 //http://doctrina.org/maximum-height-of-red-black-tree.html
                 var maxHeight = 2 * Math.Log(nodeCount + 1, 2);
 
-                NUnit.Framework.Assert.IsTrue(actualHeight < maxHeight);
-                NUnit.Framework.Assert.IsTrue(tree.Count == nodeCount - 1 - i);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(actualHeight < maxHeight);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == nodeCount - 1 - i);
             }
 
-            NUnit.Framework.Assert.IsTrue(tree.Count == 0);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == 0);
         }
 
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void RedBlackTree_BulkInit_Test_With_Node_LookUp()
         {
             var nodeCount = 1000;
@@ -245,11 +245,11 @@ namespace Advanced.Algorithms.Tests.DataStructures
 
             var tree = new RedBlackTree<int>(sortedNumbers, true);
 
-            NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
 
             //IEnumerable test using linq
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.AsEnumerableDesc().Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.AsEnumerableDesc().Count());
 
             tree.Root.VerifyCount();
 
@@ -258,21 +258,21 @@ namespace Advanced.Algorithms.Tests.DataStructures
                 tree.Delete(sortedNumbers[i]);
 
                 tree.Root.VerifyCount();
-                NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Root.IsBinarySearchTree(int.MinValue, int.MaxValue));
 
                 var actualHeight = tree.Root.GetHeight();
 
                 //http://doctrina.org/maximum-height-of-red-black-tree.html
                 var maxHeight = 2 * Math.Log(nodeCount + 1, 2);
 
-                NUnit.Framework.Assert.IsTrue(actualHeight < maxHeight);
-                NUnit.Framework.Assert.IsTrue(tree.Count == nodeCount - 1 - i);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(actualHeight < maxHeight);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == nodeCount - 1 - i);
             }
 
-            NUnit.Framework.Assert.IsTrue(tree.Count == 0);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == 0);
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void RedBlackTree_StressTest()
         {
             var nodeCount = 1000 * 10;
@@ -287,7 +287,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
             for (int i = 0; i < nodeCount; i++)
             {
                 tree.Insert(randomNumbers[i]);
-                NUnit.Framework.Assert.IsTrue(tree.Count == i + 1);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == i + 1);
             }
 
 
@@ -297,16 +297,16 @@ namespace Advanced.Algorithms.Tests.DataStructures
                                    .ToList();
 
             //IEnumerable test using linq
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.AsEnumerableDesc().Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.AsEnumerableDesc().Count());
 
             for (int i = 0; i < nodeCount; i++)
             {
                 tree.Delete(randomNumbers[i]);
-                NUnit.Framework.Assert.IsTrue(tree.Count == nodeCount - 1 - i);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == nodeCount - 1 - i);
             }
 
-            NUnit.Framework.Assert.IsTrue(tree.Count == 0);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Count == 0);
         }
     }
 }

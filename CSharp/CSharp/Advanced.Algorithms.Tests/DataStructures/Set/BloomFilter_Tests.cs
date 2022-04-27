@@ -7,7 +7,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
     
     public class BloomFilter_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BloomFilter_Smoke_Test()
         {
             var filter = new BloomFilter<string>(100);
@@ -15,11 +15,11 @@ namespace Advanced.Algorithms.Tests.DataStructures
             filter.AddKey("cat");
             filter.AddKey("rat");
 
-            NUnit.Framework.Assert.IsTrue(filter.KeyExists("cat"));
-            NUnit.Framework.Assert.IsFalse(filter.KeyExists("bat"));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(filter.KeyExists("cat"));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(filter.KeyExists("bat"));
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BloomFilter_Accuracy_Test()
         {
             var bloomFilter = new BloomFilter<string>(10000);
@@ -30,20 +30,20 @@ namespace Advanced.Algorithms.Tests.DataStructures
             bloomFilter.AddKey("orange");
             bloomFilter.AddKey("banana");
 
-            NUnit.Framework.Assert.IsTrue(bloomFilter.KeyExists("bar"));
-            NUnit.Framework.Assert.IsFalse(bloomFilter.KeyExists("ba111r"));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(bloomFilter.KeyExists("bar"));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(bloomFilter.KeyExists("ba111r"));
 
-            NUnit.Framework.Assert.IsTrue(bloomFilter.KeyExists("banana"));
-            NUnit.Framework.Assert.IsFalse(bloomFilter.KeyExists("dfs11j"));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(bloomFilter.KeyExists("banana"));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(bloomFilter.KeyExists("dfs11j"));
 
-            NUnit.Framework.Assert.IsTrue(bloomFilter.KeyExists("foo"));
-            NUnit.Framework.Assert.IsFalse(bloomFilter.KeyExists("1foo"));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(bloomFilter.KeyExists("foo"));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(bloomFilter.KeyExists("1foo"));
 
-            NUnit.Framework.Assert.IsTrue(bloomFilter.KeyExists("apple"));
-            NUnit.Framework.Assert.IsFalse(bloomFilter.KeyExists("applefoo"));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(bloomFilter.KeyExists("apple"));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(bloomFilter.KeyExists("applefoo"));
 
-            NUnit.Framework.Assert.IsTrue(bloomFilter.KeyExists("orange"));
-            NUnit.Framework.Assert.IsFalse(bloomFilter.KeyExists("orangew"));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(bloomFilter.KeyExists("orange"));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(bloomFilter.KeyExists("orangew"));
         }
     }
 }

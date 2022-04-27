@@ -8,7 +8,7 @@ namespace Advanced.Algorithms.Tests.Graph
     
     public class BellmanFord_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BellmanFord_Smoke_Test()
         {
             var graph = new WeightedDiGraph<char, int>();
@@ -38,12 +38,12 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.FindShortestPath(graph, 'S', 'T');
 
-            NUnit.Framework.Assert.AreEqual(4, result.Length);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(4, result.Length);
 
             var expectedPath = new char[] { 'S', 'A', 'B', 'T' };
             for (int i = 0; i < expectedPath.Length; i++)
             {
-                NUnit.Framework.Assert.AreEqual(expectedPath[i], result.Path[i]);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(expectedPath[i], result.Path[i]);
             }
 
         }

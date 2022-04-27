@@ -10,7 +10,7 @@ namespace Advanced.Algorithms.Tests.DataStructures.Graph.AdjacencyList
         /// <summary>
         /// key value dictionary tests 
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void DiGraph_Smoke_Test()
         {
             var graph = new DiGraph<int>();
@@ -22,8 +22,8 @@ namespace Advanced.Algorithms.Tests.DataStructures.Graph.AdjacencyList
             graph.AddVertex(5);
 
             graph.AddEdge(1, 2);
-            NUnit.Framework.Assert.IsTrue(graph.HasEdge(1, 2));
-            NUnit.Framework.Assert.IsFalse(graph.HasEdge(2, 1));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(graph.HasEdge(1, 2));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(graph.HasEdge(2, 1));
 
             graph.AddEdge(2, 3);
             graph.AddEdge(3, 4);
@@ -32,27 +32,27 @@ namespace Advanced.Algorithms.Tests.DataStructures.Graph.AdjacencyList
             graph.AddEdge(3, 5);
 
             //IEnumerable test using linq
-            NUnit.Framework.Assert.AreEqual(graph.VerticesCount, graph.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(graph.VerticesCount, graph.Count());
 
-            NUnit.Framework.Assert.AreEqual(2, graph.OutEdges(4).Count());
-            NUnit.Framework.Assert.AreEqual(2, graph.InEdges(5).Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(2, graph.OutEdges(4).Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(2, graph.InEdges(5).Count());
 
-            NUnit.Framework.Assert.AreEqual(5, graph.VerticesCount);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(5, graph.VerticesCount);
 
-            NUnit.Framework.Assert.IsTrue(graph.HasEdge(1, 2));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(graph.HasEdge(1, 2));
 
             graph.RemoveEdge(1, 2);
 
-            NUnit.Framework.Assert.IsFalse(graph.HasEdge(1, 2));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(graph.HasEdge(1, 2));
 
             graph.RemoveEdge(2, 3);
             graph.RemoveEdge(3, 4);
             graph.RemoveEdge(4, 5);
             graph.RemoveEdge(4, 1);
 
-            NUnit.Framework.Assert.IsTrue(graph.HasEdge(3, 5));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(graph.HasEdge(3, 5));
             graph.RemoveEdge(3, 5);
-            NUnit.Framework.Assert.IsFalse(graph.HasEdge(3, 5));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(graph.HasEdge(3, 5));
 
             graph.RemoveVertex(1);
             graph.RemoveVertex(2);
@@ -63,10 +63,10 @@ namespace Advanced.Algorithms.Tests.DataStructures.Graph.AdjacencyList
             graph.RemoveEdge(5, 5);
             graph.RemoveVertex(5);
 
-            NUnit.Framework.Assert.AreEqual(0, graph.VerticesCount);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(0, graph.VerticesCount);
 
             //IEnumerable test using linq
-            NUnit.Framework.Assert.AreEqual(graph.VerticesCount, graph.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(graph.VerticesCount, graph.Count());
         }
     }
 }

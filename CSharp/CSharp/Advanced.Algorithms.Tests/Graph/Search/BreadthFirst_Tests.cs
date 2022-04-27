@@ -5,7 +5,7 @@ namespace Advanced.Algorithms.Tests.Graph
     
     public class BreadFirst_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BreadthFirst_AdjacencyListGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.Graph<char>();
@@ -32,13 +32,13 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var algorithm = new BreadthFirst<char>();
 
-            NUnit.Framework.Assert.IsTrue(algorithm.Find(graph, 'D'));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(algorithm.Find(graph, 'D'));
 
-            NUnit.Framework.Assert.IsFalse(algorithm.Find(graph, 'M'));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(algorithm.Find(graph, 'M'));
 
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BreadthFirst_AdjacencyMatrixGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.Graph<char>();
@@ -65,9 +65,9 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var algorithm = new BreadthFirst<char>();
 
-            NUnit.Framework.Assert.IsTrue(algorithm.Find(graph, 'D'));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(algorithm.Find(graph, 'D'));
 
-            NUnit.Framework.Assert.IsFalse(algorithm.Find(graph, 'M'));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(algorithm.Find(graph, 'M'));
 
         }
     }

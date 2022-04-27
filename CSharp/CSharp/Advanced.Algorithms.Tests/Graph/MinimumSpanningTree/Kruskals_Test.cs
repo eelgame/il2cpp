@@ -6,7 +6,7 @@ namespace Advanced.Algorithms.Tests.Graph
     
     public class Kruskals_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void Kruskals_AdjacencyListGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.WeightedGraph<char, int>();
@@ -35,10 +35,10 @@ namespace Advanced.Algorithms.Tests.Graph
             var algorithm = new Kruskals<char, int>();
             var result = algorithm.FindMinimumSpanningTree(graph);
 
-            NUnit.Framework.Assert.AreEqual(graph.VerticesCount - 1, result.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(graph.VerticesCount - 1, result.Count);
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void Kruskals_AdjacencyMatrixGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.WeightedGraph<char, int>();
@@ -67,7 +67,7 @@ namespace Advanced.Algorithms.Tests.Graph
             var algorithm = new Kruskals<char, int>();
             var result = algorithm.FindMinimumSpanningTree(graph);
 
-            NUnit.Framework.Assert.AreEqual(graph.VerticesCount - 1, result.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(graph.VerticesCount - 1, result.Count);
         }
     }
 }

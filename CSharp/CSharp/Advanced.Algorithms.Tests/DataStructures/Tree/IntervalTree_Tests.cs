@@ -10,7 +10,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
     public class IntervalTree_Tests
     {
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void IntervalTree_1D_Smoke_Test()
         {
             var tree = new IntervalTree<int>(1);
@@ -23,13 +23,13 @@ namespace Advanced.Algorithms.Tests.DataStructures
             tree.Insert(new int[] { 11 }, new int[] { 12 });
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
-            NUnit.Framework.Assert.AreEqual(tree.Count, 6);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, 6);
 
-            NUnit.Framework.Assert.IsTrue(tree.DoOverlap(new int[] { 1 }, new int[] { 10 }));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(tree.DoOverlap(new int[] { 1 }, new int[] { 10 }));
             tree.Delete(new int[] { 1 }, new int[] { 2 });
-            NUnit.Framework.Assert.IsFalse(tree.DoOverlap(new int[] { 1 }, new int[] { 2 }));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(tree.DoOverlap(new int[] { 1 }, new int[] { 2 }));
 
             tree.Delete(new int[] { 3 }, new int[] { 4 });
             tree.Delete(new int[] { 5 }, new int[] { 6 });
@@ -37,20 +37,20 @@ namespace Advanced.Algorithms.Tests.DataStructures
             tree.Delete(new int[] { 9 }, new int[] { 10 });
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
-            NUnit.Framework.Assert.IsTrue(tree.DoOverlap(new int[] { 11 }, new int[] { 12 }));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(tree.DoOverlap(new int[] { 11 }, new int[] { 12 }));
             tree.Delete(new int[] { 11 }, new int[] { 12 });
-            NUnit.Framework.Assert.IsFalse(tree.DoOverlap(new int[] { 11 }, new int[] { 12 }));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(tree.DoOverlap(new int[] { 11 }, new int[] { 12 }));
 
 
-            NUnit.Framework.Assert.AreEqual(tree.Count, 0);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, 0);
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
         }
 
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void IntervalTree_1D_Accuracy_Test()
         {
             var nodeCount = 100;
@@ -72,11 +72,11 @@ namespace Advanced.Algorithms.Tests.DataStructures
             }
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
             foreach (var interval in intervals)
             {
-                NUnit.Framework.Assert.IsTrue(tree.DoOverlap(interval.Item1,
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.DoOverlap(interval.Item1,
                                                        interval.Item2));
                 var testStart = cloneArray(interval.Item1);
                 var testEnd = cloneArray(interval.Item2);
@@ -84,12 +84,12 @@ namespace Advanced.Algorithms.Tests.DataStructures
                 testStart[0] = testStart[0] - rnd.Next(1, 5);
                 testEnd[0] = testEnd[0] + rnd.Next(1, 5);
 
-                NUnit.Framework.Assert.IsTrue(tree.DoOverlap(testStart,
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.DoOverlap(testStart,
                         testEnd));
             }
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
             var notDeleted = new HashSet<Tuple<int[], int[]>>(new IntervalComparer<int>());
 
@@ -108,16 +108,16 @@ namespace Advanced.Algorithms.Tests.DataStructures
                     var testStart = cloneArray(existingInterval.Item1);
                     var testEnd = cloneArray(existingInterval.Item2);
 
-                    NUnit.Framework.Assert.IsTrue(tree.DoOverlap(testStart, testEnd));
+                    HuaTuo.NUnit.Framework.Assert.IsTrue(tree.DoOverlap(testStart, testEnd));
                 }
             }
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
         }
 
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void IntervalTree_2D_Accuracy_Test()
         {
             var nodeCount = 100;
@@ -145,7 +145,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
 
             foreach (var interval in intervals)
             {
-                NUnit.Framework.Assert.IsTrue(tree.DoOverlap(interval.Item1,
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.DoOverlap(interval.Item1,
                                                    interval.Item2));
 
                 var testStart = cloneArray(interval.Item1);
@@ -157,7 +157,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
                 testEnd[0] = testEnd[0] + rnd.Next(1, 5);
                 testEnd[1] = testEnd[1] + rnd.Next(1, 5);
 
-                NUnit.Framework.Assert.IsTrue(tree.DoOverlap(testStart, testEnd));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.DoOverlap(testStart, testEnd));
             }
 
             var notDeleted = new HashSet<Tuple<int[], int[]>>(new IntervalComparer<int>());
@@ -177,7 +177,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
                     var testStart = cloneArray(existingInterval.Item1);
                     var testEnd = cloneArray(existingInterval.Item2);
 
-                    NUnit.Framework.Assert.IsTrue(tree.DoOverlap(testStart, testEnd));
+                    HuaTuo.NUnit.Framework.Assert.IsTrue(tree.DoOverlap(testStart, testEnd));
                 }
             }
         }

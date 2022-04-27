@@ -8,7 +8,7 @@ namespace Advanced.Algorithms.Tests.Graph
     public class BiDirectional_Tests
     {
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BiDirectional_AdjancencyListGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.DiGraph<char>();
@@ -35,16 +35,16 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var algorithm = new BiDirectional<char>();
 
-            NUnit.Framework.Assert.IsTrue(algorithm.PathExists(graph, 'A', 'I'));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(algorithm.PathExists(graph, 'A', 'I'));
 
             graph.RemoveEdge('D', 'E');
             graph.AddEdge('E', 'D');
 
-            NUnit.Framework.Assert.IsFalse(algorithm.PathExists(graph, 'A', 'I'));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(algorithm.PathExists(graph, 'A', 'I'));
 
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BiDirectional_AdjancencyMatrixGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.DiGraph<char>();
@@ -71,12 +71,12 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var algorithm = new BiDirectional<char>();
 
-            NUnit.Framework.Assert.IsTrue(algorithm.PathExists(graph, 'A', 'I'));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(algorithm.PathExists(graph, 'A', 'I'));
 
             graph.RemoveEdge('D', 'E');
             graph.AddEdge('E', 'D');
 
-            NUnit.Framework.Assert.IsFalse(algorithm.PathExists(graph, 'A', 'I'));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(algorithm.PathExists(graph, 'A', 'I'));
 
         }
     }

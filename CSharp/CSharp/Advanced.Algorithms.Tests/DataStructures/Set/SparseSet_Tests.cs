@@ -8,7 +8,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
     
     public class SparseSet_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void SparseSet_Smoke_Test()
         {
             var set = new SparseSet(15, 10);
@@ -18,18 +18,18 @@ namespace Advanced.Algorithms.Tests.DataStructures
             set.Add(0);
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(set.Count, set.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(set.Count, set.Count());
 
             set.Remove(15);
 
-            NUnit.Framework.Assert.IsTrue(set.HasItem(6));
-            NUnit.Framework.Assert.AreEqual(2, set.Count);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(set.HasItem(6));
+            HuaTuo.NUnit.Framework.Assert.AreEqual(2, set.Count);
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(set.Count, set.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(set.Count, set.Count());
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void SparseSet_Stress_Test()
         {
             var set = new SparseSet(1000, 1000);
@@ -45,22 +45,22 @@ namespace Advanced.Algorithms.Tests.DataStructures
             }
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(set.Count, set.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(set.Count, set.Count());
 
             foreach (var element in testCollection)
             {
-                NUnit.Framework.Assert.IsTrue(set.HasItem(element));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(set.HasItem(element));
             }
 
             foreach (var element in testCollection)
             {
-                NUnit.Framework.Assert.IsTrue(set.HasItem(element));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(set.HasItem(element));
                 set.Remove(element);
-                NUnit.Framework.Assert.IsFalse(set.HasItem(element));
+                HuaTuo.NUnit.Framework.Assert.IsFalse(set.HasItem(element));
             }
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(set.Count, set.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(set.Count, set.Count());
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
         /// <summary>
         /// A tree test
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void KdTree2D_NearestNeighbour_Smoke_Test()
         {
             var distanceCalculator = new DistanceCalculator2D();
@@ -29,7 +29,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
             }
 
             //IEnumerable tests using linq.
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
             int j = testPts.Count - 1;
             while (testPts.Count > 0)
@@ -37,7 +37,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
                 var testPoint = new int[] { 10, 20 };
                 var nearestNeigbour = tree.NearestNeighbour(new DistanceCalculator2D(), testPoint);
                 var actualNeigbour = GetActualNearestNeighbour(testPts, testPoint);
-                NUnit.Framework.Assert.IsTrue(distanceCalculator.Compare(actualNeigbour, nearestNeigbour, testPoint) == 0);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(distanceCalculator.Compare(actualNeigbour, nearestNeigbour, testPoint) == 0);
 
                 tree.Delete(testPts[j]);
                 testPts.RemoveAt(j);
@@ -46,13 +46,13 @@ namespace Advanced.Algorithms.Tests.DataStructures
 
 
             //IEnumerable tests using linq.
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
         }
 
         /// <summary>
         /// A tree test
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void KdTree2D_NearestNeighbour_Accuracy_Test()
         {
             var distanceCalculator = new DistanceCalculator2D();
@@ -78,7 +78,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
             }
 
             //IEnumerable tests using linq.
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
             int j = testPts.Count - 1;
 
@@ -89,7 +89,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
                 var nearestNeigbour = tree.NearestNeighbour(distanceCalculator, testPoint);
                 var actualNeigbour = GetActualNearestNeighbour(testPts, testPoint);
 
-                NUnit.Framework.Assert.IsTrue(distanceCalculator.Compare(actualNeigbour, nearestNeigbour, testPoint) == 0);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(distanceCalculator.Compare(actualNeigbour, nearestNeigbour, testPoint) == 0);
 
                 tree.Delete(testPts[j]);
                 testPts.RemoveAt(j);
@@ -98,13 +98,13 @@ namespace Advanced.Algorithms.Tests.DataStructures
 
 
             //IEnumerable tests using linq.
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
         }
 
         /// <summary>
         /// A tree test
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void KdTree2D_Range_Smoke_Test()
         {
             var testPts = new List<int[]> { new int[2]{ 1, 1 }, new int[2] { 10, 10 },
@@ -120,7 +120,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
 
 
             //IEnumerable tests using linq.
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
             var rangePoints = tree.RangeSearch(new int[2] { 1, 1 }, new int[2] { 9, 9 });
         }
@@ -128,7 +128,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
         /// <summary>
         /// A tree test
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void KdTree2D_Range_Accuracy_Test()
         {
             var distanceCalculator = new DistanceCalculator2D();
@@ -154,7 +154,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
             }
 
             //IEnumerable tests using linq.
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
             int j = testPts.Count - 1;
 
@@ -174,7 +174,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
 
                 var actualResult = tree.RangeSearch(testStartRange, testEndRange);
 
-                NUnit.Framework.Assert.IsTrue(correctResult.Count == actualResult.Count);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(correctResult.Count == actualResult.Count);
 
                 tree.Delete(testPts[j]);
                 testPts.RemoveAt(j);

@@ -11,7 +11,7 @@ namespace Advanced.Algorithms.Tests.Graph
     public class AStar_Tests
     {
         //test using eucledian (straight line) distance to destination as heuristic.
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void AStar_AdjacencyListGraph_Smoke_Test()
         {
             var testLocations = @"A5 30 573
@@ -117,18 +117,18 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.FindShortestPath(graph, locationMappings["A1"], locationMappings["G5"]);
 
-            NUnit.Framework.Assert.AreEqual(10, result.Path.Count);
-            NUnit.Framework.Assert.AreEqual(1217.3209396395309, result.Length);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(10, result.Path.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(1217.3209396395309, result.Length);
 
             var expectedPath = new string[] { "A1", "B1", "B2", "C3", "C4", "D4", "E4", "E5", "F5", "G5" };
             for (int i = 0; i < expectedPath.Length; i++)
             {
-                NUnit.Framework.Assert.AreEqual(expectedPath[i], result.Path[i].Name);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(expectedPath[i], result.Path[i].Name);
             }
         }
 
         //test using eucledian (straight line) distance to destination as heuristic.
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void AStar_AdjacencyMatrixGraph_Smoke_Test()
         {
             var testLocations = @"A5 30 573
@@ -234,13 +234,13 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.FindShortestPath(graph, locationMappings["A1"], locationMappings["G5"]);
 
-            NUnit.Framework.Assert.AreEqual(10, result.Path.Count);
-            NUnit.Framework.Assert.AreEqual(1217.3209396395309, result.Length);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(10, result.Path.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(1217.3209396395309, result.Length);
 
             var expectedPath = new string[] { "A1", "B1", "B2", "C3", "C4", "D4", "E4", "E5", "F5", "G5" };
             for (int i = 0; i < expectedPath.Length; i++)
             {
-                NUnit.Framework.Assert.AreEqual(expectedPath[i], result.Path[i].Name);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(expectedPath[i], result.Path[i].Name);
             }
         }
 

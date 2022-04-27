@@ -8,7 +8,7 @@ namespace Advanced.Algorithms.Tests.Geometry
     
     public class ClosestPointPair_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void ClosestPointPair_Smoke_Test()
         {
             var testPoints = new List<int[]>()
@@ -21,7 +21,7 @@ namespace Advanced.Algorithms.Tests.Geometry
                 new int[]{ 3, 4}
             };
 
-            NUnit.Framework.Assert.AreEqual(1.414, ClosestPointPair.Find(testPoints), 3);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(1.414, ClosestPointPair.Find(testPoints), 3);
         }
     }
 }

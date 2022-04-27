@@ -7,7 +7,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
     public class Queue_Tests
     {
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void ArrayQueue_Test()
         {
             var Queue = new Queue<string>();
@@ -16,26 +16,26 @@ namespace Advanced.Algorithms.Tests.DataStructures
             Queue.Enqueue("b");
             Queue.Enqueue("c");
 
-            NUnit.Framework.Assert.AreEqual(Queue.Count, 3);
-            NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "a");
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Count, 3);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "a");
 
 
-            NUnit.Framework.Assert.AreEqual(Queue.Count, 2);
-            NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "b");
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Count, 2);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "b");
 
-            NUnit.Framework.Assert.AreEqual(Queue.Count, 1);
-            NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "c");
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Count, 1);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "c");
 
-            NUnit.Framework.Assert.AreEqual(Queue.Count, 0);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Count, 0);
 
             Queue.Enqueue("a");
 
-            NUnit.Framework.Assert.AreEqual(Queue.Count, 1);
-            NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "a");
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Count, 1);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "a");
 
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void LinkedListQueue_Test()
         {
             var Queue = new Queue<string>(QueueType.LinkedList);
@@ -44,22 +44,22 @@ namespace Advanced.Algorithms.Tests.DataStructures
             Queue.Enqueue("b");
             Queue.Enqueue("c");
 
-            NUnit.Framework.Assert.AreEqual(Queue.Count, 3);
-            NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "a");
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Count, 3);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "a");
 
 
-            NUnit.Framework.Assert.AreEqual(Queue.Count, 2);
-            NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "b");
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Count, 2);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "b");
 
-            NUnit.Framework.Assert.AreEqual(Queue.Count, 1);
-            NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "c");
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Count, 1);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "c");
 
-            NUnit.Framework.Assert.AreEqual(Queue.Count, 0);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Count, 0);
 
             Queue.Enqueue("a");
 
-            NUnit.Framework.Assert.AreEqual(Queue.Count, 1);
-            NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "a");
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Count, 1);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(Queue.Dequeue(), "a");
 
         }
     }

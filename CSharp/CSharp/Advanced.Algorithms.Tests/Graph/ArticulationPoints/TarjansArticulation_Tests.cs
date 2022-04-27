@@ -7,7 +7,7 @@ namespace Advanced.Algorithms.Tests.Graph
     
     public class TarjansArticulation_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void TarjanArticulation_AdjacencyListGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.Graph<char>();
@@ -39,17 +39,17 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.FindArticulationPoints(graph);
 
-            NUnit.Framework.Assert.AreEqual(4, result.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(4, result.Count);
 
             var expectedResult = new char[] { 'C', 'D', 'E', 'F' };
 
             foreach (var v in result)
             {
-                NUnit.Framework.Assert.IsTrue(expectedResult.Contains(v));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(expectedResult.Contains(v));
             }
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void TarjanArticulation_AdjacencyMatrixGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.Graph<char>();
@@ -81,13 +81,13 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.FindArticulationPoints(graph);
 
-            NUnit.Framework.Assert.AreEqual(4, result.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(4, result.Count);
 
             var expectedResult = new char[] { 'C', 'D', 'E', 'F' };
 
             foreach (var v in result)
             {
-                NUnit.Framework.Assert.IsTrue(expectedResult.Contains(v));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(expectedResult.Contains(v));
             }
         }
     }

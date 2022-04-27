@@ -7,7 +7,7 @@ namespace Advanced.Algorithms.Tests.Geometry
     
     public class ConvexHull_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void ConvexHull_Smoke_Test()
         {
             var testPoints = new List<int[]>()
@@ -23,7 +23,7 @@ namespace Advanced.Algorithms.Tests.Geometry
 
             var result = ConvexHull.Find(testPoints);
 
-            NUnit.Framework.Assert.AreEqual(4, result.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(4, result.Count);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Advanced.Algorithms.Tests.Graph
     
     public class DepthFirstTopSort_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void DFS_Topological_Sort_AdjancencyListGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.DiGraph<char>();
@@ -36,10 +36,10 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.GetTopSort(graph);
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 8);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 8);
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void DFS_Topological_Sort_AdjancencyMatrixGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.DiGraph<char>();
@@ -69,7 +69,7 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.GetTopSort(graph);
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 8);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 8);
         }
     }
 }

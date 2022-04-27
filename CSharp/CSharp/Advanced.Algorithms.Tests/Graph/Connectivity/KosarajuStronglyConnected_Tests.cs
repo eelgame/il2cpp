@@ -8,7 +8,7 @@ namespace Advanced.Algorithms.Tests.Graph
     
     public class KosarajuStronglyConnected_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void KosarajuStronglyConnected_AdjacenctListGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.DiGraph<char>();
@@ -40,7 +40,7 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.FindStronglyConnectedComponents(graph);
 
-            NUnit.Framework.Assert.AreEqual(4, result.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(4, result.Count);
 
             var expectedResult = new List<List<char>>() {
                     new char[] { 'A', 'B', 'C' }.ToList(),
@@ -54,17 +54,17 @@ namespace Advanced.Algorithms.Tests.Graph
                 var expectation = expectedResult[i];
                 var actual = result[i];
 
-                NUnit.Framework.Assert.IsTrue(expectation.Count == actual.Count);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(expectation.Count == actual.Count);
 
                 foreach (var vertex in expectation)
                 {
-                    NUnit.Framework.Assert.IsTrue(actual.Contains(vertex));
+                    HuaTuo.NUnit.Framework.Assert.IsTrue(actual.Contains(vertex));
                 }
 
             }
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void KosarajuStronglyConnected_AdjacenctMatrixGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.DiGraph<char>();
@@ -96,7 +96,7 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.FindStronglyConnectedComponents(graph);
 
-            NUnit.Framework.Assert.AreEqual(4, result.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(4, result.Count);
 
             var expectedResult = new List<List<char>>() {
                     new char[] { 'A', 'B', 'C' }.ToList(),
@@ -110,11 +110,11 @@ namespace Advanced.Algorithms.Tests.Graph
                 var expectation = expectedResult[i];
                 var actual = result[i];
 
-                NUnit.Framework.Assert.IsTrue(expectation.Count == actual.Count);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(expectation.Count == actual.Count);
 
                 foreach (var vertex in expectation)
                 {
-                    NUnit.Framework.Assert.IsTrue(actual.Contains(vertex));
+                    HuaTuo.NUnit.Framework.Assert.IsTrue(actual.Contains(vertex));
                 }
 
             }

@@ -6,7 +6,7 @@ namespace Advanced.Algorithms.Tests.Graph
     
     public class Dijikstras_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void Dijikstra_AdjacencyListGraph_Smoke_Test()
         {
             var graph = new Algorithms.DataStructures.Graph.AdjacencyMatrix.WeightedDiGraph<char, int>();
@@ -37,16 +37,16 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.FindShortestPath(graph, 'S', 'T');
 
-            NUnit.Framework.Assert.AreEqual(15, result.Length);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(15, result.Length);
 
             var expectedPath = new char[] { 'S', 'A', 'C', 'D', 'B', 'T' };
             for (int i = 0; i < expectedPath.Length; i++)
             {
-                NUnit.Framework.Assert.AreEqual(expectedPath[i], result.Path[i]);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(expectedPath[i], result.Path[i]);
             }
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void Dijikstra_AdjacencyMatrixGraph_Smoke_Test()
         {
             var graph = new Algorithms.DataStructures.Graph.AdjacencyMatrix.WeightedDiGraph<char, int>();
@@ -77,12 +77,12 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.FindShortestPath(graph, 'S', 'T');
 
-            NUnit.Framework.Assert.AreEqual(15, result.Length);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(15, result.Length);
 
             var expectedPath = new char[] { 'S', 'A', 'C', 'D', 'B', 'T' };
             for (int i = 0; i < expectedPath.Length; i++)
             {
-                NUnit.Framework.Assert.AreEqual(expectedPath[i], result.Path[i]);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(expectedPath[i], result.Path[i]);
             }
         }
 

@@ -11,7 +11,7 @@ namespace Advanced.Algorithms.Tests.Distributed
     
     public class AsyncQueue_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void AsyncQueue_Test()
         {
             var queue = new AsyncQueue<int>();
@@ -56,7 +56,7 @@ namespace Advanced.Algorithms.Tests.Distributed
 
             Task.WaitAll(tasks.ToArray());
 
-            NUnit.Framework.Assert.AreEqual(expected, actual);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(expected, actual);
         }
     }
 }

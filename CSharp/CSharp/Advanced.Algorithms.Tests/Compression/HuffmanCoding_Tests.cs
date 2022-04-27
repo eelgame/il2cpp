@@ -6,7 +6,7 @@ namespace Advanced.Algorithms.Tests.Compression
     
     public class HuffmanCoding_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void HuffmanCoding_Test()
         {
             var encoder = new HuffmanCoding<char>();
@@ -14,7 +14,7 @@ namespace Advanced.Algorithms.Tests.Compression
             var compressed = encoder
                 .Compress("abcasdasdasdcaaaaaadqwerdasd".ToCharArray());
 
-            NUnit.Framework.Assert.AreEqual(compressed['a'].Length, 1);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(compressed['a'].Length, 1);
         }
     }
 }

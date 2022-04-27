@@ -8,7 +8,7 @@ namespace Advanced.Algorithms.Tests.Geometry
     
     public class PointInsidePolygon_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void PointInsidePolygon_Smoke_Test()
         {
             var polygon = new Polygon(new List<Line>() {
@@ -19,10 +19,10 @@ namespace Advanced.Algorithms.Tests.Geometry
 
             var testPoint = new Point(20, 20);
 
-            NUnit.Framework.Assert.IsFalse(PointInsidePolygon.IsInside(polygon, testPoint));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(PointInsidePolygon.IsInside(polygon, testPoint));
 
             testPoint = new Point(5, 5);
-            NUnit.Framework.Assert.IsTrue(PointInsidePolygon.IsInside(polygon, testPoint));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(PointInsidePolygon.IsInside(polygon, testPoint));
         }
     }
 }

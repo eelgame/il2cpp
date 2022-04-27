@@ -10,7 +10,7 @@ namespace Advanced.Algorithms.Tests.Geometry
     
     public class BentleyOttmann_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BentleyOttmann_Smoke_Test_1()
         {
             var lines = new List<Line>();
@@ -28,10 +28,10 @@ namespace Advanced.Algorithms.Tests.Geometry
 
             var actualIntersections = bentleyOttmannAlgorithm.FindIntersections(lines);
 
-            NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BentleyOttmann_Smoke_Test_2()
         {
             var lines = new List<Line>();
@@ -48,10 +48,10 @@ namespace Advanced.Algorithms.Tests.Geometry
 
             var actualIntersections = bentleyOttmannAlgorithm.FindIntersections(lines);
 
-            NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BentleyOttmann_Vertical_Lines_Test()
         {
             var lines = new List<Line>();
@@ -64,10 +64,10 @@ namespace Advanced.Algorithms.Tests.Geometry
 
             var actualIntersections = bentleyOttmannAlgorithm.FindIntersections(lines);
 
-            NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BentleyOttmann_Horizontal_Lines_Test()
         {
             var lines = new List<Line>();
@@ -80,10 +80,10 @@ namespace Advanced.Algorithms.Tests.Geometry
 
             var actualIntersections = bentleyOttmannAlgorithm.FindIntersections(lines);
 
-            NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BentleyOttmann_Vertical_Horizontal_Lines_Test()
         {
             var lines = new List<Line>();
@@ -108,10 +108,10 @@ namespace Advanced.Algorithms.Tests.Geometry
 
             var actualIntersections = bentleyOttmannAlgorithm.FindIntersections(lines);
 
-            NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BentleyOttmann_Vertical_Horizontal_Other_Lines_Test_1()
         {
             var lines = new List<Line>();
@@ -135,11 +135,11 @@ namespace Advanced.Algorithms.Tests.Geometry
 
             var actualIntersections = bentleyOttmannAlgorithm.FindIntersections(lines);
 
-            NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
         }
 
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BentleyOttmann_Vertical_Horizontal_Other_Lines_Test_2()
         {
             var lines = new List<Line>();
@@ -163,10 +163,10 @@ namespace Advanced.Algorithms.Tests.Geometry
 
             var actualIntersections = bentleyOttmannAlgorithm.FindIntersections(lines);
 
-            NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BentleyOttmann_Stress_Test()
         {
             var lines = new List<Line>();
@@ -190,8 +190,8 @@ namespace Advanced.Algorithms.Tests.Geometry
 
             var actualElapsedTime = stopWatch.ElapsedMilliseconds;
 
-            NUnit.Framework.Assert.IsTrue(actualElapsedTime <= naiveElapsedTime);
-            NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(actualElapsedTime <= naiveElapsedTime);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
 
         }
 

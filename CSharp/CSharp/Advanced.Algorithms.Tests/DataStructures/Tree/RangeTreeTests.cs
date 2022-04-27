@@ -10,7 +10,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
         /// <summary>
         /// Smoke test
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void RangeTree1D_Smoke_Test()
         {
             var tree = new RangeTree<int>(1);
@@ -25,17 +25,17 @@ namespace Advanced.Algorithms.Tests.DataStructures
             tree.Insert(new int[] { 7 });
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
             var rangeResult = tree.RangeSearch(new int[] { 2 }, new int[] { 6 });
-            NUnit.Framework.Assert.IsTrue(rangeResult.Count == 5);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(rangeResult.Count == 5);
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
             tree.Delete(new int[] { 4 });
             rangeResult = tree.RangeSearch(new int[] { -1 }, new int[] { 6 });
-            NUnit.Framework.Assert.IsTrue(rangeResult.Count == 6);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(rangeResult.Count == 6);
 
             tree.Delete(new int[] { 0 });
             tree.Delete(new int[] { 1 });
@@ -47,7 +47,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
 
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void RangeTree2D_Smoke_Test()
         {
             var tree = new RangeTree<int>(2);
@@ -63,21 +63,21 @@ namespace Advanced.Algorithms.Tests.DataStructures
             tree.Insert(new int[] { 7, 10 });
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
             var rangeResult = tree.RangeSearch(new int[] { 1, 1 }, new int[] { 3, 7 });
-            NUnit.Framework.Assert.IsTrue(rangeResult.Count == 3);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(rangeResult.Count == 3);
 
             tree.Delete(new int[] { 2, 5 });
             rangeResult = tree.RangeSearch(new int[] { 1, 1 }, new int[] { 3, 7 });
-            NUnit.Framework.Assert.IsTrue(rangeResult.Count == 2);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(rangeResult.Count == 2);
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
             tree.Delete(new int[] { 3, 6 });
             rangeResult = tree.RangeSearch(new int[] { 1, 1 }, new int[] { 3, 7 });
-            NUnit.Framework.Assert.IsTrue(rangeResult.Count == 1);
+            HuaTuo.NUnit.Framework.Assert.IsTrue(rangeResult.Count == 1);
 
             tree.Delete(new int[] { 0, 1 });
             tree.Delete(new int[] { 1, 1 });
@@ -88,7 +88,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
             tree.Delete(new int[] { 7, 10 });
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
         }
     }
 }

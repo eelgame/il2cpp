@@ -7,7 +7,7 @@ namespace Advanced.Algorithms.Tests.Graph
     
     public class FloydWarshalls_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void FloydWarshall_AdjacencyListGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.WeightedGraph<char, int>();
@@ -38,26 +38,26 @@ namespace Advanced.Algorithms.Tests.Graph
             var result = algorithm.FindAllPairShortestPaths(graph);
 
             var testCase = result.First(x => x.Source == 'S' && x.Destination == 'T');
-            NUnit.Framework.Assert.AreEqual(15, testCase.Distance);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(15, testCase.Distance);
 
             var expectedPath = new char[] { 'S', 'A', 'C', 'D', 'B', 'T' };
             for (int i = 0; i < expectedPath.Length; i++)
             {
-                NUnit.Framework.Assert.AreEqual(expectedPath[i], testCase.Path[i]);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(expectedPath[i], testCase.Path[i]);
             }
 
             testCase = result.First(x => x.Source == 'T' && x.Destination == 'S');
-            NUnit.Framework.Assert.AreEqual(15, testCase.Distance);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(15, testCase.Distance);
 
             expectedPath = new char[] { 'T', 'B', 'D', 'C', 'A', 'S' };
             for (int i = 0; i < expectedPath.Length; i++)
             {
-                NUnit.Framework.Assert.AreEqual(expectedPath[i], testCase.Path[i]);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(expectedPath[i], testCase.Path[i]);
             }
 
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void FloydWarshall_AdjacencyMartixGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.WeightedGraph<char, int>();
@@ -88,21 +88,21 @@ namespace Advanced.Algorithms.Tests.Graph
             var result = algorithm.FindAllPairShortestPaths(graph);
 
             var testCase = result.First(x => x.Source == 'S' && x.Destination == 'T');
-            NUnit.Framework.Assert.AreEqual(15, testCase.Distance);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(15, testCase.Distance);
 
             var expectedPath = new char[] { 'S', 'A', 'C', 'D', 'B', 'T' };
             for (int i = 0; i < expectedPath.Length; i++)
             {
-                NUnit.Framework.Assert.AreEqual(expectedPath[i], testCase.Path[i]);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(expectedPath[i], testCase.Path[i]);
             }
 
             testCase = result.First(x => x.Source == 'T' && x.Destination == 'S');
-            NUnit.Framework.Assert.AreEqual(15, testCase.Distance);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(15, testCase.Distance);
 
             expectedPath = new char[] { 'T', 'B', 'D', 'C', 'A', 'S' };
             for (int i = 0; i < expectedPath.Length; i++)
             {
-                NUnit.Framework.Assert.AreEqual(expectedPath[i], testCase.Path[i]);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(expectedPath[i], testCase.Path[i]);
             }
 
         }

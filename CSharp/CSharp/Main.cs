@@ -1,6 +1,6 @@
 ﻿using System;
 using CSharp_aot;
-using NUnitLite;
+using HuaTuo.NUnitLite;
 
 namespace CSharp
 {

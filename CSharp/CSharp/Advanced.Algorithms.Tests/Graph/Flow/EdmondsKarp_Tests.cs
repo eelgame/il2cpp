@@ -9,7 +9,7 @@ namespace Advanced.Algorithms.Tests.Graph
         /// <summary>
         /// EdmondKarp Max Flow test
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void EdmondKarp_AdjacencyListGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.WeightedDiGraph<char, int>();
@@ -39,13 +39,13 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.ComputeMaxFlow(graph, 'S', 'T');
 
-            NUnit.Framework.Assert.AreEqual(result, 19);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result, 19);
         }
 
         /// <summary>
         /// EdmondKarp Max Flow test
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void EdmondKarp_AdjacencyMatrixGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.WeightedDiGraph<char, int>();
@@ -75,7 +75,7 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.ComputeMaxFlow(graph, 'S', 'T');
 
-            NUnit.Framework.Assert.AreEqual(result, 19);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result, 19);
         }
         /// <summary>
         /// operators for generics

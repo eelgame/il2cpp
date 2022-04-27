@@ -11,7 +11,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
     public class RTree_Tests
     {
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void RTree_Insertion_Test()
         {
             var nodeCount = 1000;
@@ -29,24 +29,24 @@ namespace Advanced.Algorithms.Tests.DataStructures
                 tree.Insert(polygon);
 
                 //IEnumerable test
-                NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+                HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
                 //height should be similar to that of B+ tree.
                 //https://en.wikipedia.org/wiki/B-tree#Best_case_and_worst_case_heights
                 var theoreticalMaxHeight = Math.Ceiling(Math.Log((j + 2) / 2, (int)Math.Ceiling((double)order / 2))) + 1;
 
                 var actualMaxHeight = tree.Root.Height;
-                NUnit.Framework.Assert.AreEqual(verifyHeightUniformityAndReturnHeight(tree.Root, order), actualMaxHeight);
-                NUnit.Framework.Assert.IsTrue(actualMaxHeight <= theoreticalMaxHeight);
+                HuaTuo.NUnit.Framework.Assert.AreEqual(verifyHeightUniformityAndReturnHeight(tree.Root, order), actualMaxHeight);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(actualMaxHeight <= theoreticalMaxHeight);
                 j++;
 
-                NUnit.Framework.Assert.IsTrue(tree.Exists(polygon));
+                HuaTuo.NUnit.Framework.Assert.IsTrue(tree.Exists(polygon));
             }
 
-            NUnit.Framework.Assert.AreEqual(j, tree.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(j, tree.Count);
         }
 
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void RTree_Range_Search_Test()
         {
             var nodeCount = 1000;
@@ -64,18 +64,18 @@ namespace Advanced.Algorithms.Tests.DataStructures
             }
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
             var searchRectangle = getRandomPointOrPolygon().GetContainingRectangle();
 
             var expectedIntersections = randomPolygons.Where(x => RectangleIntersection.FindIntersection(searchRectangle, x.GetContainingRectangle()) != null).ToList();
             var actualIntersections = tree.RangeSearch(searchRectangle);
 
-            NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(expectedIntersections.Count, actualIntersections.Count);
         }
 
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void RTree_Deletion_Test()
         {
             var nodeCount = 1000;
@@ -93,27 +93,27 @@ namespace Advanced.Algorithms.Tests.DataStructures
             }
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
             int j = randomPolygons.Count;
             foreach (var polygon in randomPolygons)
             {
                 tree.Delete(polygon);
-                NUnit.Framework.Assert.IsFalse(tree.Exists(polygon));
+                HuaTuo.NUnit.Framework.Assert.IsFalse(tree.Exists(polygon));
 
                 j--;
 
                 if (j > 0)
                 {
                     var actualMaxHeight = tree.Root.Height;
-                    NUnit.Framework.Assert.AreEqual(verifyHeightUniformityAndReturnHeight(tree.Root, order), actualMaxHeight);
-                    NUnit.Framework.Assert.AreEqual(j, tree.Count);
+                    HuaTuo.NUnit.Framework.Assert.AreEqual(verifyHeightUniformityAndReturnHeight(tree.Root, order), actualMaxHeight);
+                    HuaTuo.NUnit.Framework.Assert.AreEqual(j, tree.Count);
                 }
 
             }
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void RTree_Stress_Test()
         {
             var nodeCount = 10000;
@@ -132,7 +132,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
             }
 
             //IEnumerable test
-            NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
             foreach (var polygon in randomPolygons)
             {
@@ -148,7 +148,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
         {
             if (!node.IsLeaf)
             {
-                NUnit.Framework.Assert.IsTrue(node.KeyCount >= order / 2);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(node.KeyCount >= order / 2);
             }
 
             var heights = new List<int>();
@@ -160,7 +160,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
             if (node.KeyCount > 0)
             {
                 var height = heights.Distinct();
-                NUnit.Framework.Assert.AreEqual(1, height.Count());
+                HuaTuo.NUnit.Framework.Assert.AreEqual(1, height.Count());
                 return height.First();
             }
 

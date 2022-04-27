@@ -10,7 +10,7 @@ namespace Advanced.Algorithms.Tests.Graph
         /// <summary>
         /// Min Cut test
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void MinCut_AdjacencyListGraph_Smoke_Test_1()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.WeightedDiGraph<char, int>();
@@ -40,14 +40,14 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.ComputeMinCut(graph, 'S', 'T');
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 2);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 2);
         }
 
 
         /// <summary>
         /// Min Cut test
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void MinCut_AdjacencyListGraph_Smoke_Test_2()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.WeightedDiGraph<char, int>();
@@ -87,13 +87,13 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.ComputeMinCut(graph, 'A', 'J');
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 1);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 1);
         }
 
         /// <summary>
         /// Min Cut test
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void MinCut_AdjacencyListMatrix_Smoke_Test_1()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.WeightedDiGraph<char, int>();
@@ -123,14 +123,14 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.ComputeMinCut(graph, 'S', 'T');
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 2);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 2);
         }
 
 
         /// <summary>
         /// Min Cut test
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void MinCut_AdjacencyMatrixGraph_Smoke_Test_2()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.WeightedDiGraph<char, int>();
@@ -170,7 +170,7 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.ComputeMinCut(graph, 'A', 'J');
 
-            NUnit.Framework.Assert.AreEqual(result.Count, 1);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(result.Count, 1);
         }
         /// <summary>
         /// operators for generics

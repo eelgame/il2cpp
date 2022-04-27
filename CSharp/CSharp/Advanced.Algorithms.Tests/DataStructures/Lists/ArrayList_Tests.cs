@@ -8,7 +8,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
     
     public class ArrayList_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void ArrayList_Test()
         {
             var arrayList = new ArrayList<int>();
@@ -17,16 +17,16 @@ namespace Advanced.Algorithms.Tests.DataStructures
             for (int i = 0; i <= nodeCount; i++)
             {
                 arrayList.Add(i);
-                NUnit.Framework.Assert.AreEqual(true, arrayList.Contains(i));
+                HuaTuo.NUnit.Framework.Assert.AreEqual(true, arrayList.Contains(i));
             }
 
             //IEnumerable test using linq
-            NUnit.Framework.Assert.AreEqual(arrayList.Length, arrayList.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(arrayList.Length, arrayList.Count());
 
             for (int i = 0; i <= nodeCount; i++)
             {
                 arrayList.RemoveAt(0);
-                NUnit.Framework.Assert.AreEqual(false, arrayList.Contains(i));
+                HuaTuo.NUnit.Framework.Assert.AreEqual(false, arrayList.Contains(i));
             }
 
             var rnd = new Random();
@@ -35,7 +35,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
             foreach (var item in testSeries)
             {
                 arrayList.Add(item);
-                NUnit.Framework.Assert.AreEqual(true, arrayList.Contains(item));
+                HuaTuo.NUnit.Framework.Assert.AreEqual(true, arrayList.Contains(item));
             }
 
             for (int i = 1; i <= nodeCount; i++)
@@ -45,7 +45,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
 
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void ArrayList_InsertAt_Test()
         {
             var arrayList = new ArrayList<int>();
@@ -54,16 +54,16 @@ namespace Advanced.Algorithms.Tests.DataStructures
             for (int i = 0; i <= nodeCount; i++)
             {
                 arrayList.InsertAt(i, i);
-                NUnit.Framework.Assert.AreEqual(true, arrayList.Contains(i));
+                HuaTuo.NUnit.Framework.Assert.AreEqual(true, arrayList.Contains(i));
             }
 
             arrayList.InsertAt(5, 50000);
 
             //IEnumerable test using linq
-            NUnit.Framework.Assert.AreEqual(arrayList.Length, arrayList.Count());
+            HuaTuo.NUnit.Framework.Assert.AreEqual(arrayList.Length, arrayList.Count());
 
-            NUnit.Framework.Assert.AreEqual(true, arrayList.Contains(50000));
-            NUnit.Framework.Assert.AreEqual(nodeCount + 2, arrayList.Length);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(true, arrayList.Contains(50000));
+            HuaTuo.NUnit.Framework.Assert.AreEqual(nodeCount + 2, arrayList.Length);
         }
     }
 }

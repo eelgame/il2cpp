@@ -6,34 +6,34 @@ namespace Advanced.Algorithms.Tests.String
     
     public class KMP_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void String_KMP_Test()
         {
             var algorithm = new KMP();
 
             var index = algorithm.Search("xabcabzabc", "abc");
 
-            NUnit.Framework.Assert.AreEqual(1, index);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(1, index);
 
             index = algorithm.Search("abdcdaabxaabxcaabxaabxay", "aabxaabxcaabxaabxay");
 
-            NUnit.Framework.Assert.AreEqual(5, index);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(5, index);
 
             index = algorithm.Search("aaaabaaaaaaa", "aaaa");
 
-            NUnit.Framework.Assert.AreEqual(0, index);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(0, index);
 
             index = algorithm.Search("abcabababdefgabcd", "fga");
 
-            NUnit.Framework.Assert.AreEqual(11, index);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(11, index);
 
             index = algorithm.Search("abxabcabcaby", "abcaby");
 
-            NUnit.Framework.Assert.AreEqual(6, index);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(6, index);
 
             index = algorithm.Search("abxabcabcaby", "abx");
 
-            NUnit.Framework.Assert.AreEqual(0, index);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(0, index);
         }
     }
 }

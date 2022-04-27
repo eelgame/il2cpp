@@ -10,7 +10,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
         
         public class QuadTreeTests
         {
-            [NUnit.Framework.Test]
+            [HuaTuo.NUnit.Framework.Test]
             public void QuadTree_Smoke_Test()
             {
                 var tree = new QuadTree<object>();
@@ -26,18 +26,18 @@ namespace Advanced.Algorithms.Tests.DataStructures
                 tree.Insert(new Point(7, 10));
 
                 var rangeResult = tree.RangeSearch(new Rectangle(new Point(1, 7), new Point(3, 1)));
-                NUnit.Framework.Assert.IsTrue(rangeResult.Count == 3);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(rangeResult.Count == 3);
 
                 //IEnumerable test using linq
-                NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
+                HuaTuo.NUnit.Framework.Assert.AreEqual(tree.Count, tree.Count());
 
                 tree.Delete(new Point(2, 5));
                 rangeResult = tree.RangeSearch(new Rectangle(new Point(1, 7), new Point(3, 1)));
-                NUnit.Framework.Assert.IsTrue(rangeResult.Count == 2);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(rangeResult.Count == 2);
 
                 tree.Delete(new Point(3, 6));
                 rangeResult = tree.RangeSearch(new Rectangle(new Point(1, 7), new Point(3, 1)));
-                NUnit.Framework.Assert.IsTrue(rangeResult.Count == 1);
+                HuaTuo.NUnit.Framework.Assert.IsTrue(rangeResult.Count == 1);
 
                 tree.Delete(new Point(0, 1));
                 tree.Delete(new Point(1, 1));

@@ -8,7 +8,7 @@ namespace Advanced.Algorithms.Tests.Graph
     
     public class TarjansBridge_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void TarjanBridge_AdjacencyListGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.Graph<char>();
@@ -40,7 +40,7 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.FindBridges(graph);
 
-            NUnit.Framework.Assert.AreEqual(3, result.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(3, result.Count);
 
             var expected = new List<char[]>()
             {
@@ -51,12 +51,12 @@ namespace Advanced.Algorithms.Tests.Graph
 
             foreach (var bridge in result)
             {
-                NUnit.Framework.Assert.IsTrue(expected.Any(x => bridge.vertexA == x[0]
+                HuaTuo.NUnit.Framework.Assert.IsTrue(expected.Any(x => bridge.vertexA == x[0]
                                     && bridge.vertexB == x[1]));
             }
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void TarjanBridge_AdjacencyMatrixGraph_Smoke_Test()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.Graph<char>();
@@ -88,7 +88,7 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var result = algorithm.FindBridges(graph);
 
-            NUnit.Framework.Assert.AreEqual(3, result.Count);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(3, result.Count);
 
             var expected = new List<char[]>()
             {
@@ -99,7 +99,7 @@ namespace Advanced.Algorithms.Tests.Graph
 
             foreach (var bridge in result)
             {
-                NUnit.Framework.Assert.IsTrue(expected.Any(x => bridge.vertexA == x[0]
+                HuaTuo.NUnit.Framework.Assert.IsTrue(expected.Any(x => bridge.vertexA == x[0]
                                     && bridge.vertexB == x[1]));
             }
         }

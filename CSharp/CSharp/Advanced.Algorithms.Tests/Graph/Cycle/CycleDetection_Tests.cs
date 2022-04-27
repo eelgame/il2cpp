@@ -6,7 +6,7 @@ namespace Advanced.Algorithms.Tests.Graph
     
     public class CycleDetection_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void Graph_Cycle_Detection_AdjancencyListGraph_Tests()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyList.DiGraph<char>();
@@ -36,15 +36,15 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var algorithm = new CycleDetector<char>();
 
-            NUnit.Framework.Assert.IsTrue(algorithm.HasCycle(graph));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(algorithm.HasCycle(graph));
 
             graph.RemoveEdge('C', 'A');
             graph.RemoveEdge('G', 'E');
 
-            NUnit.Framework.Assert.IsFalse(algorithm.HasCycle(graph));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(algorithm.HasCycle(graph));
         }
 
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void Graph_Cycle_Detection_AdjancencyMatrixGraph_Tests()
         {
             var graph = new Advanced.Algorithms.DataStructures.Graph.AdjacencyMatrix.DiGraph<char>();
@@ -74,12 +74,12 @@ namespace Advanced.Algorithms.Tests.Graph
 
             var algorithm = new CycleDetector<char>();
 
-            NUnit.Framework.Assert.IsTrue(algorithm.HasCycle(graph));
+            HuaTuo.NUnit.Framework.Assert.IsTrue(algorithm.HasCycle(graph));
 
             graph.RemoveEdge('C', 'A');
             graph.RemoveEdge('G', 'E');
 
-            NUnit.Framework.Assert.IsFalse(algorithm.HasCycle(graph));
+            HuaTuo.NUnit.Framework.Assert.IsFalse(algorithm.HasCycle(graph));
         }
     }
 }

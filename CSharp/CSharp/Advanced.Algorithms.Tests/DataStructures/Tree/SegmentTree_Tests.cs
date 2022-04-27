@@ -10,7 +10,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
         /// <summary>
         /// Smoke test
         /// </summary>
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void SegmentTree_Sum_Smoke_Test()
         {
             var testArray = new int[] { 1, 3, 5, 7, 9, 11 };
@@ -22,7 +22,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
 
             var sum = tree.RangeResult(1, 3);
 
-            NUnit.Framework.Assert.AreEqual(15, sum);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(15, sum);
         }
     }
 }

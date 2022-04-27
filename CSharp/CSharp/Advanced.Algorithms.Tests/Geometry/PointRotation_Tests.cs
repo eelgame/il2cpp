@@ -6,7 +6,7 @@ namespace Advanced.Algorithms.Tests.Geometry
     
     public class PointRotation_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void PointRotation_Smoke_Test()
         {
             var result = PointRotation.Rotate(
@@ -14,16 +14,16 @@ namespace Advanced.Algorithms.Tests.Geometry
                 new Point(5, 5),
                 -45);
 
-            NUnit.Framework.Assert.AreEqual(7, (int)result.X);
-            NUnit.Framework.Assert.AreEqual(0, (int)result.Y);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(7, (int)result.X);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(0, (int)result.Y);
 
             result = PointRotation.Rotate(
                 new Point(0, 0),
                 new Point(5, 5),
                 -90);
 
-            NUnit.Framework.Assert.AreEqual(5, (int)result.X);
-            NUnit.Framework.Assert.AreEqual(-5, (int)result.Y);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(5, (int)result.X);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(-5, (int)result.Y);
         }
     }
 }

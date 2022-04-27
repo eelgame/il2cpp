@@ -9,7 +9,7 @@ namespace Advanced.Algorithms.Tests.Search
     
     public class BoyerMoore_Tests
     {
-        [NUnit.Framework.Test]
+        [HuaTuo.NUnit.Framework.Test]
         public void BoyerMoore_Majority_Finder_Test()
         {
             var elementCount = 1000;
@@ -30,7 +30,7 @@ namespace Advanced.Algorithms.Tests.Search
             var expected = majorityElement;
             var actual = BoyerMoore<int>.FindMajority(randomNumbers);
 
-            NUnit.Framework.Assert.AreEqual(actual, expected);
+            HuaTuo.NUnit.Framework.Assert.AreEqual(actual, expected);
         }
     }
 }
