@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Advanced.Algorithms.Tests.DataStructures
 {
@@ -138,7 +139,7 @@ namespace Advanced.Algorithms.Tests.DataStructures
 
             foreach (var item in tree)
             {
-                var existing = new string(item);
+                var existing = string.Join("", item);
                 HuaTuo.NUnit.Framework.Assert.IsTrue(testStrings.Contains(existing));
             }
 
@@ -159,8 +160,8 @@ namespace Advanced.Algorithms.Tests.DataStructures
         public static string randomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, length)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
+            return string.Join("", Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 

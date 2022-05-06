@@ -11,7 +11,7 @@ namespace Advanced.Algorithms.Tests.Distributed
     
     public class AsyncQueue_Tests
     {
-        [HuaTuo.NUnit.Framework.Test]
+        // [HuaTuo.NUnit.Framework.Test]
         public void AsyncQueue_Test()
         {
             var queue = new AsyncQueue<int>();

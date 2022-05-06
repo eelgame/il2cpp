@@ -29,9 +29,8 @@ namespace CSharp
             // new AutoRun(assembly).Execute(new []{"--test=Advanced.Algorithms.Tests.Combinatorics"});
             // new AutoRun(assembly).Execute(new []{"--test=Advanced.Algorithms.Tests.Compression"});
             // new AutoRun(assembly).Execute(new []{"--test=Advanced.Algorithms.Tests.DataStructures.Dictionary_Tests"});
-            // new AutoRun(assembly).Execute(new []{"--test=Advanced.Algorithms.Tests.DataStructures.OrderedDictionary_Tests"});
-            new AutoRun(assembly).Execute(new []{"--test=Advanced.Algorithms.Tests.DataStructures.Graph.AdjacencyMatrix.WeightedDiGraph_Tests", "--trace=Verbose", "--workers=1"});
-            
+            // new AutoRun(assembly).Execute(new []{"--test=Advanced.Algorithms.Tests.DataStructures.TernarySearchTree_Tests"});
+            new AutoRun(assembly).Execute(new []{"--trace=Verbose", "--workers=1"});
         }
     }
 }
