@@ -32,16 +32,6 @@
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugUnitTest|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
     <ItemGroup>
         <Reference Include="huatuo.nunit.framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
           <HintPath>..\nunit\huatuo.nunit.framework.dll</HintPath>
@@ -54,7 +44,7 @@
         <Reference Include="System.Numerics" />
         <Reference Include="System.Xml" />
     </ItemGroup>
-    <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugUnitTest|AnyCPU' ">
+    <ItemGroup>
         <Compile Include="Advanced.Algorithms.Tests\Binary\BaseConversion_Tests.cs" />
         <Compile Include="Advanced.Algorithms.Tests\Binary\GCD_Tests.cs" />
         <Compile Include="Advanced.Algorithms.Tests\Binary\Logarithm_Tests.cs" />
