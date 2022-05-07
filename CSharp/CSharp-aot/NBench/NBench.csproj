@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\common.props" />
+  <PropertyGroup>
+    <Description>Cross-platform performance benchmarking and testing framework for .NET applications.</Description>
+    <AssemblyTitle>NBench</AssemblyTitle>
+    <TargetFrameworks>$(NetStandardLibVersion)</TargetFrameworks>
+    <AssemblyName>NBench</AssemblyName>
+    <PackageId>NBench</PackageId>
+    <PackageTags>performance;benchmarking;benchmark;perf;testing;NBench</PackageTags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+</Project>

@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Reflection;
 using CSharp_aot;
-using HuaTuo.NUnitLite;
+using NBench.Metrics.GarbageCollection;
 
 namespace CSharp
 {
@@ -30,7 +31,10 @@ namespace CSharp
             // new AutoRun(assembly).Execute(new []{"--test=Advanced.Algorithms.Tests.Compression"});
             // new AutoRun(assembly).Execute(new []{"--test=Advanced.Algorithms.Tests.DataStructures.Dictionary_Tests"});
             // new AutoRun(assembly).Execute(new []{"--test=Advanced.Algorithms.Tests.DataStructures.TernarySearchTree_Tests"});
-            new AutoRun(assembly).Execute(new []{"--trace=Verbose", "--workers=1"});
+            // new AutoRun(assembly).Execute(new []{"--trace=Verbose", "--workers=1"});
+            // NBenchRunner.Run<Main>();
+            foreach (var type in typeof(GcMeasurementConfigurator).GetTypeInfo().ImplementedInterfaces)
+                Console.WriteLine(type);
         }
     }
 }
