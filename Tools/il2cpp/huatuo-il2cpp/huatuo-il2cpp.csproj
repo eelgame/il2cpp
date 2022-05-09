@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>huatuo-il2cpp</AssemblyName>
+        <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+    <PropertyGroup>
+        <LangVersion>7.3</LangVersion>
+        <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Unity.IL2CPP.Building\Unity.IL2CPP.Building.csproj" />
+      <ProjectReference Include="..\Unity.IL2CPP\Unity.IL2CPP.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="il2cpp">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\il2cpp.dll</HintPath>
+        </Reference>
+        <Reference Include="MiniProfiler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\MiniProfiler.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.IL2CPP.Common">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Unity.IL2CPP.Common.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Options">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Unity.Options.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.IL2CPP.Common35">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Unity.IL2CPP.Common35.dll</HintPath>
+        </Reference>
+        <Reference Include="MiniProfiler">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\MiniProfiler.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Mono.Cecil.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+</Project>

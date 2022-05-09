@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>huatuo-preprocess</AssemblyName>
+        <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+    <PropertyGroup>
+        <LangVersion>7.3</LangVersion>
+        <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <ItemGroup>
+    </ItemGroup>
+    <ItemGroup>
+
+        <Reference Include="Mono.Cecil">
+            <HintPath>..\..\..\il2cpp\build\deploy\netcoreapp3.1\Mono.Cecil.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+</Project>
