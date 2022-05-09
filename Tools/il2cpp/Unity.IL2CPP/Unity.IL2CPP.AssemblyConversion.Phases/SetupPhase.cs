@@ -6,7 +6,7 @@ using Unity.MiniProfiling;
 
 namespace Unity.IL2CPP.AssemblyConversion.Phases
 {
-	internal static class SetupPhase
+	public static class SetupPhase
 	{
 		public static void Run(AssemblyConversionContext context, ReadOnlyCollection<AssemblyDefinition> assemblies, bool includeWindowsRuntime = true)
 		{

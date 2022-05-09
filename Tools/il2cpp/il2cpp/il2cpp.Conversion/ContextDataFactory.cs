@@ -10,7 +10,7 @@ using Unity.Options;
 
 namespace il2cpp.Conversion
 {
-	internal static class ContextDataFactory
+	public static class ContextDataFactory
 	{
 		public static AssemblyConversionInputData CreateConversionDataFromOptions()
 		{
