@@ -66,7 +66,7 @@ namespace il2cpp
         /// <returns></returns>
         private static bool Check(GenericInstanceType type)
         {
-            return true; // 如果类型引用了热更dll则应该返回false，这里暂时没有处理
+            return true; // TODO 如果类型引用了热更dll则应该返回false，这里暂时没有处理
         }
     }
 }
