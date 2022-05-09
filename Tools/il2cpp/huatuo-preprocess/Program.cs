@@ -19,16 +19,17 @@ public class Program
             readerParameters.InMemory = true;
             readerParameters.AssemblyResolver = assemblyResolver;
 
-            var assemblyDefinition =
-                AssemblyDefinition.ReadAssembly(Path.Combine(dir, dll), readerParameters);
-
-            var ca = new CustomAttribute(
-                assemblyDefinition.MainModule.ImportReference(
-                    typeof(InternalsVisibleToAttribute).GetConstructor(new[] {typeof(string)})));
-            ca.ConstructorArguments.Add(new CustomAttributeArgument(assemblyDefinition.MainModule.TypeSystem.String,
-                "huatuo-il2cpp"));
-            assemblyDefinition.CustomAttributes.Add(ca);
-            assemblyDefinition.Write(Path.Combine(dir, assemblyDefinition.MainModule.Name));
+            using (var assemblyDefinition =
+                   AssemblyDefinition.ReadAssembly(Path.Combine(dir, dll), readerParameters))
+            {
+                var ca = new CustomAttribute(
+                    assemblyDefinition.MainModule.ImportReference(
+                        typeof(InternalsVisibleToAttribute).GetConstructor(new[] {typeof(string)})));
+                ca.ConstructorArguments.Add(new CustomAttributeArgument(assemblyDefinition.MainModule.TypeSystem.String,
+                    "huatuo-il2cpp"));
+                assemblyDefinition.CustomAttributes.Add(ca);
+                assemblyDefinition.Write(Path.Combine(dir, assemblyDefinition.MainModule.Name));
+            }
         }
 
         return 0;
