@@ -41,7 +41,13 @@ namespace il2cpp
 
                     foreach (var type in inflatedCollectionCollector.AsReadOnly().Types)
                         if (type.Scope is ModuleDefinition md && !inputData.Assemblies.Contains(new NPath(md.FileName)))
-                            Console.WriteLine(type);
+                        {
+                            if (Check(type))
+                            {
+                                Console.WriteLine(type);
+                            }
+                        }
+
 
                     return 0;
                 }
@@ -51,6 +57,16 @@ namespace il2cpp
                 Console.Error.WriteLine($"Unhandled exception: {arg}");
                 return -1;
             }
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        private static bool Check(GenericInstanceType type)
+        {
+            return true; // 如果类型引用了热更dll则应该返回false，这里暂时没有处理
         }
     }
 }
