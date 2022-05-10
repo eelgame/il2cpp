@@ -31,22 +31,31 @@ namespace il2cpp
                     var primaryCollectionContext = context.GlobalPrimaryCollectionContext.CreateCollectionContext();
 
                     var assemblyDefinitions = new List<AssemblyDefinition>();
-                    
+
                     foreach (var assemblyDefinition in context.Results.Initialize.AllAssembliesOrderedByDependency)
                         if (inputData.Assemblies.Contains(new NPath(assemblyDefinition.MainModule.FileName)))
                             assemblyDefinitions.Add(assemblyDefinition);
 
                     var inflatedCollectionCollector = GenericsCollector.Collect(primaryCollectionContext,
                         new ReadOnlyCollection<AssemblyDefinition>(assemblyDefinitions));
-
+                    
+                    Console.WriteLine("========================泛型扫描========================");
                     foreach (var type in inflatedCollectionCollector.AsReadOnly().Types)
                         if (type.Scope is ModuleDefinition md && !inputData.Assemblies.Contains(new NPath(md.FileName)))
-                        {
                             if (Check(type))
-                            {
                                 Console.WriteLine(type);
-                            }
-                        }
+
+                    Console.WriteLine("========================ValueType检测========================");
+                    foreach (var type in inflatedCollectionCollector.AsReadOnly().Types)
+                        if (!IsHotfixType(type.Scope, inputData.Assemblies))
+                            foreach (var genericArgument in type.GenericArguments)
+                                if (genericArgument.IsValueType &&
+                                    IsHotfixType(genericArgument.Scope, inputData.Assemblies))
+                                {
+                                    
+                                    Console.WriteLine(type);
+                                    break;
+                                }
 
 
                     return 0;
@@ -58,9 +67,13 @@ namespace il2cpp
                 return -1;
             }
         }
-        
+
+        private static bool IsHotfixType(IMetadataScope scope, ReadOnlyCollection<NPath> assemblies)
+        {
+            return scope is ModuleDefinition md && assemblies.Contains(md.FileName);
+        }
+
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
