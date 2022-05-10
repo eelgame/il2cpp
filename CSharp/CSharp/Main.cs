@@ -11,18 +11,19 @@ namespace CSharp
         private string Name;
         private int Age;
     }
-    
-    public struct Dog
-    {
-        private string NickName;
-    }
+
 
     public class Main
     {
         public static void Entry()
         {
             Console.WriteLine(typeof(RefTypes)); // 防止被裁剪
-            var persons = new List<Person>();
+            // var persons = new List<Person>();
+            // var dogs = new List<Dog>();
+
+            var dog = new Dog();
+            dog.Eat<Person>();
+
 
             var assembly = typeof(Main).Assembly;
 

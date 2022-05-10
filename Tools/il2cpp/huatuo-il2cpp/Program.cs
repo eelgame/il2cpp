@@ -46,8 +46,9 @@ namespace il2cpp
                                 Console.WriteLine(type);
 
                     Console.WriteLine("========================ValueType检测========================");
-                    HashSet<TypeReference> types = new HashSet<TypeReference>();
-                    
+                    HashSet<TypeReference> types;
+                    types = new HashSet<TypeReference>();
+
                     foreach (var type in inflatedCollectionCollector.AsReadOnly().Types)
                         if (!IsHotfixType(type.Scope, inputData.Assemblies))
                             foreach (var genericArgument in type.GenericArguments)
@@ -57,7 +58,25 @@ namespace il2cpp
                                     types.Add(genericArgument);
                                 }
 
+                    foreach (var type in types)
+                    {
+                        Console.WriteLine(type);
+                    }
+                    types = new HashSet<TypeReference>();
+                    Console.WriteLine("========================ValueType泛型方法检测========================");
 
+                    foreach (var genericInstanceMethod in inflatedCollectionCollector.AsReadOnly().Methods)
+                    {
+                        if (!IsHotfixType(genericInstanceMethod.DeclaringType.Scope, inputData.Assemblies))
+                        {
+                            foreach (var genericArgument in genericInstanceMethod.GenericArguments)
+                                if (genericArgument.IsValueType &&
+                                    IsHotfixType(genericArgument.Scope, inputData.Assemblies))
+                                {
+                                    types.Add(genericArgument);
+                                }
+                        }                        
+                    }
                     foreach (var type in types)
                     {
                         Console.WriteLine(type);
