@@ -1,15 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using CSharp_aot;
 using NBench.Metrics.GarbageCollection;
 
 namespace CSharp
 {
+    public struct Person
+    {
+        private string Name;
+        private int Age;
+    }
+    
+    public struct Dog
+    {
+        private string NickName;
+    }
+
     public class Main
     {
         public static void Entry()
         {
             Console.WriteLine(typeof(RefTypes)); // 防止被裁剪
+            var persons = new List<Person>();
+
             var assembly = typeof(Main).Assembly;
 
             // var types = assembly.GetTypes();
