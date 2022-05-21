@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Reflection.Metadata;
 using il2cpp.Conversion;
 using Mono.Cecil;
 using NiceIO;
