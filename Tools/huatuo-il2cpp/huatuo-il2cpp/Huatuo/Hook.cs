@@ -60,7 +60,7 @@ namespace il2cpp.Huatuo
         {
             Console.WriteLine("AddExtraTypes");
             foreach (var assembly in assemblies)
-                if (assembly.MainModule.Name == "Assembly-CSharp-firstpass.dll")
+                if (assembly.MainModule.Name == "HuaTuo.Runtime")
                 {
                     var file = Path.Combine(Path.GetDirectoryName(assembly.MainModule.FileName), "type_mapping.json");
                     if (File.Exists(file))
@@ -130,5 +130,14 @@ namespace il2cpp.Huatuo
                     break;
                 }
         }
+
+
+        // [HookMethod(typeof(IL2CPPOutputBuildDescription), "get_LibIL2CPPDir")]
+        // [MethodImpl(MethodImplOptions.NoOptimization)]
+        // public NPath get_LibIL2CPPDir()
+        // {
+        //     var libIl2CppDir = IL2CPPOptions.Generatedcppdir.ParentContaining("libil2cpp_root").Combine("il2cpp_huatuo").Combine("libil2cpp");
+        //     return libIl2CppDir;
+        // }
     }
 }
